@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Kristi&family=Pinyon+Script&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Kristi&family=Special+Elite&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Capriola&family=Kristi&family=Special+Elite&display=swap" rel="stylesheet">
+		<style>
+			:root {
+				--grey: #737373;
+				--grey-dark: #292b30;
+				--primary: #04150d;
+				--dark-blue: #10101a;
+				--accent1-bright: #dda95c;
+				--accent1-dim: #ddc7a6;
+				--accent1-dim-semi-transparent: #ffbc5631;
+				--accent1-dark: #744600;
+				--accent1-darker: #482b00;
+				--accent1-darkest: #231500;
+			}
+			*   {
+				margin:0;
+				padding:0;
+				font-family: 'FiraCode';
+			}
+			html {
+				background-color: #04150d;
+				color: #fff;
+				font-family: 'FiraCode', arial;
+				font-size: 14px;
+				height: 100%;
+				scroll-behavior: smooth;
+			}
+			@media screen and (prefers-reduced-motion: reduce) {
+				html {
+					scroll-behavior: auto;
+				}
+			}
+			body {
+				height: 100%;
+				width: 100vw;
+				overflow-x: hidden;
+			}
+			code {
+				background-color: #000;
+				padding: 10px 15px;
+				border: 1px solid var(--grey);
+				border-radius: 6px;
+				font-size: 1rem;
+				font-family: 'JetBrainsMono';
+				text-shadow: rgb(255 215 77 / 60%) -1px -1px 6px, rgb(124 127 255 / 60%) 1px 1px 6px;
+			}
+			hr {
+				border: none;
+				border-bottom: 1px dashed var(--accent1-dim);
+			}
+			a {
+				text-decoration: underline dotted;
+				text-underline-offset: 3px;
+				color: var(--accent1-bright);
+				font-weight: bold;
+				transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+			}
+			a:hover {
+				text-decoration: underline solid;
+			}
+			a svg {
+				transition: .2s;
+			}
+			a:hover svg, a:focus svg {
+				color: var(--accent1-dim);
+				transform: translateY(-3px);
+			}
+			button {
+				font-family: 'FiraCode';
+				padding: 12px 25px;
+				background-color: transparent;
+				color: var(--accent1-bright);
+				border: 1px solid var(--accent1-bright);
+				border-radius: 5px;
+				transition: .3s;
+			}
+			button:hover {
+				background-color: var(--accent1-dim-semi-transparent);
+			}
+			.button-styles {
+				font-family: 'FiraCode';
+				padding: 12px 25px;
+				background-color: transparent;
+				color: var(--accent1-bright);
+				border: 1px solid var(--accent1-bright);
+				border-radius: 5px;
+				transition: .3s;
+			}
+			.button-styles:hover {
+				background-color: var(--accent1-dim-semi-transparent);
+			}
+			table th {
+				text-align: left;
+				padding-bottom: 10px;
+			}
+			table tr th:not(:last-of-type), table tr td:not(:last-of-type) {
+				padding-right: 30px;
+			}
+			details {
+				user-select: none;
+			}
+			details > summary {
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+				list-style: none;
+			}
+			details > summary::-webkit-details-marker {
+				display: none;
+			}
+			details[open] > summary {
+				margin-bottom: 10px;
+			}
+			details > summary svg.details-chevron {
+				position: relative;
+				transform: scale(1.2) rotate(-90deg);
+				transition: all 0.3s;
+			}
+			details[open] > summary svg.details-chevron {
+				transform: scale(1.2) rotate(0);
+			}
+			details > summary svg.small.details-chevron {
+				transform: scale(0.7) rotate(-90deg);
+				margin-bottom: 1px;
+			}
+			details[open] > summary svg.small.details-chevron {
+				transform: scale(0.7) rotate(0);
+			}
+			@font-face {
+				font-family: "TheSeasons";
+				src: local("TheSeasons"), url("%sveltekit.assets%/font/TheSeasons/TheSeasons-reg.otf") format("opentype");
+			}
+			@font-face {
+				font-family: "PigeonScout";
+				src: local("PigeonScout"), url("%sveltekit.assets%/font/PigeonScout/PigeonScout.ttf") format("truetype");
+			}
+			@font-face {
+				font-family: "MoonLight";
+				src: local("MoonLight"), url("%sveltekit.assets%/font/Moon/MoonLight.otf") format("opentype");
+			}
+			@font-face {
+				font-family: "MoonDark";
+				src: local("MoonDark"), url("%sveltekit.assets%/font/Moon/MoonDark.otf") format("opentype");
+			}
+			@font-face {
+				font-family: "1942";
+				src: local("1942"), url("%sveltekit.assets%/font/1942/1942.ttf") format("truetype");
+			}
+			@font-face {
+				font-family: "FiraCode";
+				src: local("FiraCode-Regular"), url("%sveltekit.assets%/font/FiraCode/FiraCode-Regular.ttf") format("truetype");
+				font-weight: 400;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: "FiraCode";
+				src: local("FiraCode-Bold"), url("%sveltekit.assets%/font/FiraCode/FiraCode-Bold.ttf") format("truetype");
+				font-weight: 700;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: "JetBrainsMono";
+				src: local("JetBrainsMono-Regular"), url("%sveltekit.assets%/font/JetBrainsMono/JetBrainsMono-Regular.ttf") format("truetype");
+			}
+			@font-face {
+				font-family: "Garamond";
+				src: local("EBGaramond-Italic-VariableFont_wght"), url("%sveltekit.assets%/font/Garamond/EBGaramond-Italic.ttf") format("truetype");
+			}
+		</style>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		%sveltekit.body%
+	</body>
+</html>
