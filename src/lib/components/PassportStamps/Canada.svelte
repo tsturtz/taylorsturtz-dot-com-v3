@@ -2,7 +2,6 @@
 
 <style>
   svg {
-    color: var(--accent1-dark);
     opacity: 0.7;
     transform: rotate(-6deg);
     shape-outside: url($lib/images/canada.svg);
@@ -10,7 +9,7 @@
     shape-margin: 20px;
     position: absolute;
     top: -50px;
-    right: 220px;
+    right: 190px;
   }
 </style>
 

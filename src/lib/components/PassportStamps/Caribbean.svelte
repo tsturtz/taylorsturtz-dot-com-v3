@@ -2,15 +2,14 @@
 
 <style>
   svg {
-    color: var(--accent1-dark);
     opacity: 0.7;
     transform: rotate(3deg);
     shape-outside: url($lib/images/caribbean.svg);
     shape-image-threshold: 0.5;
     shape-margin: 20px;
     position: absolute;
-    top: 30px;
-    right: 100px;
+    top: 50px;
+    right: 80px;
   }
 </style>
 

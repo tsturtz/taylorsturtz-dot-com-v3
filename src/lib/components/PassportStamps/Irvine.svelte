@@ -2,7 +2,6 @@
 
 <style>
   svg {
-    color: var(--accent1-dark);
     opacity: 0.7;
     transform: rotate(10deg);
     shape-outside: url($lib/images/irvine.svg);
@@ -10,7 +9,7 @@
     shape-margin: 20px;
     position: absolute;
     top: 10px;
-    right: 370px;
+    right: 320px;
   }
 </style>
 

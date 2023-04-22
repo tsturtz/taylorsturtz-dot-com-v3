@@ -4,12 +4,6 @@
   svg {
     color: var(--accent1-dark);
     opacity: 0.7;
-    float: right;
-    shape-outside: url($lib/images/tea.svg);
-    shape-image-threshold: 0.5;
-    shape-margin: 20px;
-    padding: 0px 0px 40px 40px;
-    margin-top: -20px;
   }
 </style>
 

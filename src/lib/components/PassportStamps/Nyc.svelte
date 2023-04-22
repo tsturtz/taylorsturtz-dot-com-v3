@@ -2,7 +2,6 @@
 
 <style>
   svg {
-    color: var(--accent1-dark);
     opacity: 0.7;
     transform: rotate(-6deg);
     shape-outside: url($lib/images/nyc.svg);

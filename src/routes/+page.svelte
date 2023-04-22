@@ -11,12 +11,48 @@
   import Wave3 from '$lib/images/waves/wave3.svg';
   import Wave4 from '$lib/images/waves/wave4.svg';
   import Wave5 from '$lib/images/waves/wave5.svg';
+  import WavesStacked_GY from '$lib/images/waves/waves-stacked-gy.svg';
+  import WavesStacked_YG from '$lib/images/waves/waves-stacked-yg.svg';
 
   // Icons
-  import TwitterIcon from '$lib/icons/twitter.svg';
-  import LinkedinIcon from '$lib/icons/linkedin.svg';
-  import GithubIcon from '$lib/icons/github.svg';
-  import ExternalLinkIcon from '$lib/icons/external-link.svg';
+  import AngularIcon from '$lib/components/Icons/devicons/AngularIcon.svelte';
+  import ArduinoIcon from '$lib/components/Icons/devicons/ArduinoIcon.svelte';
+  import AwsIcon from '$lib/components/Icons/devicons/AwsIcon.svelte';
+  import AzureIcon from '$lib/components/Icons/devicons/AzureIcon.svelte';
+  import BalsamiqIcon from '$lib/components/Icons/devicons/BalsamiqIcon.svelte';
+  import BashIcon from '$lib/components/Icons/devicons/BashIcon.svelte';
+  import CssIcon from '$lib/components/Icons/devicons/CssIcon.svelte';
+  import DockerIcon from '$lib/components/Icons/devicons/DockerIcon.svelte';
+  import ExpressIcon from '$lib/components/Icons/devicons/ExpressIcon.svelte';
+  import ExternalLinkIcon from '$lib/components/Icons/ExternalLinkIcon.svelte';
+  import FigmaIcon from '$lib/components/Icons/devicons/FigmaIcon.svelte';
+  import FirebaseIcon from '$lib/components/Icons/devicons/FirebaseIcon.svelte';
+  import GcpIcon from '$lib/components/Icons/devicons/GcpIcon.svelte';
+  import GitIcon from '$lib/components/Icons/devicons/GitIcon.svelte';
+  import GoIcon from '$lib/components/Icons/devicons/GoIcon.svelte';
+  import HtmlIcon from '$lib/components/Icons/devicons/HtmlIcon.svelte';
+  import JavaIcon from '$lib/components/Icons/devicons/JavaIcon.svelte';
+  import JavaScriptIcon from '$lib/components/Icons/devicons/JavaScriptIcon.svelte';
+  import JenkinsIcon from '$lib/components/Icons/devicons/JenkinsIcon.svelte';
+  import JqueryIcon from '$lib/components/Icons/devicons/JqueryIcon.svelte';
+  import LaravelIcon from '$lib/components/Icons/devicons/LaravelIcon.svelte';
+  import MongoIcon from '$lib/components/Icons/devicons/MongoIcon.svelte';
+  import MySqlIcon from '$lib/components/Icons/devicons/MySqlIcon.svelte';
+  import NginxIcon from '$lib/components/Icons/devicons/NginxIcon.svelte';
+  import NodeIcon from '$lib/components/Icons/devicons/NodeIcon.svelte';
+  import OracleIcon from '$lib/components/Icons/devicons/OracleIcon.svelte';
+  import PhotoshopIcon from '$lib/components/Icons/devicons/PhotoshopIcon.svelte';
+  import PostmanIcon from '$lib/components/Icons/devicons/PostmanIcon.svelte';
+  import PlaywrightIcon from '$lib/components/Icons/devicons/PlaywrightIcon.svelte';
+  import PhpIcon from '$lib/components/Icons/devicons/PhpIcon.svelte';
+  import ReactIcon from '$lib/components/Icons/devicons/ReactIcon.svelte';
+  import SassIcon from '$lib/components/Icons/devicons/SassIcon.svelte';
+  import SeleniumIcon from '$lib/components/Icons/devicons/SeleniumIcon.svelte';
+  import SpringIcon from '$lib/components/Icons/devicons/SpringIcon.svelte';
+  import StorybookIcon from '$lib/components/Icons/devicons/StorybookIcon.svelte';
+  import SvelteIcon from '$lib/components/Icons/devicons/SvelteIcon.svelte';
+  import TypeScriptIcon from '$lib/components/Icons/devicons/TypeScriptIcon.svelte';
+  import VueIcon from '$lib/components/Icons/devicons/VueIcon.svelte';
 
   // PassportStamps
   import Columbus from '$lib/components/PassportStamps/Columbus.svelte';
@@ -31,30 +67,27 @@
   import BootOnBall from '$lib/components/BootOnBall.svelte';
   import Ramen from '$lib/components/Ramen.svelte';
   import Tea from '$lib/components/Tea.svelte';
-  import LaptopGuy from '$lib/components/LaptopGuy.svelte';
-  import LaptopGuyBlob from '$lib/components/LaptopGuyBlob.svelte';
   import Bicycle from '$lib/components/Bicycle.svelte';
-  import CopyToClipboard from '$lib/components/CopyToClipboard.svelte';
-  import VerticalDivider from '$lib/components/VerticalDivider.svelte';
-
   import Flamingo from '$lib/images/flamingo.svg';
   import Blob1 from '$lib/images/blob1.svg';
+  import PaperPlane from '$lib/components/PaperPlane.svelte';
+
+  // App
+  import Showcase from '$lib/components/App/Showcase.svelte';
+
+  // Util Components
+  import CopyToClipboard from '$lib/components/CopyToClipboard.svelte';
+  import ExperienceDashedDivider from '$lib/components/ExperienceDashedDivider.svelte';
+  import TableRowDashedDivider from '$lib/components/TableRowDashedDivider.svelte';
+  import VerticalDivider from '$lib/components/VerticalDivider.svelte';
 
   // Svelte imports
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
 
-  const block = '&#9640';
-  const blocks = (count: number) => {
-    let str = '';
-    for (var i = 0; i < count; i++) {
-      str = i === 0 ? block : str + `${block}`;
-    }
-    return str;
-  };
   let mounted = false;
   let scrollPosition = 0;
-  $: console.log('🚀 ~ scrollPosition', scrollPosition);
+  // $: console.log('🚀 ~ scrollPosition', scrollPosition);
 
   onMount(() => {
     mounted = true;
@@ -62,50 +95,6 @@
 </script>
 
 <style lang="scss">
-  .blocks {
-    white-space: nowrap;
-    letter-spacing: 6px;
-  }
-  .centered-content {
-    width: 1000px;
-    margin: 0 auto;
-  }
-  .section-container {
-    position: relative; /* to enable anchor offset */
-    width: 100%;
-  }
-  .section-number {
-    position: absolute;
-    top: -215px;
-    font-size: 10rem;
-    color: #ffffffdd !important;
-  }
-  .section-title {
-    font-family: 'TheSeasons';
-    font-size: 6rem;
-    white-space: nowrap;
-  }
-  .section-subtitle {
-    font-family: 'Kristi';
-    font-size: 3rem;
-    margin-bottom: 30px;
-    white-space: nowrap;
-    font-style: italic;
-    opacity: 0.6;
-  }
-  .section-heading {
-    font-family: 'TheSeasons';
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    white-space: nowrap;
-  }
-  .section-subheading {
-    font-family: 'TheSeasons';
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    white-space: nowrap;
-  }
-
   #hero {
     height: 1200px;
     width: 100%;
@@ -132,49 +121,45 @@
     position: absolute;
     top: -40px;
   }
-  #nav-wave {
+  #hero-bottom-wave {
     position: absolute;
     bottom: 0;
-    z-index: 0;
   }
 
-  nav {
+  nav#main-nav {
     height: 120px;
     width: 100%;
     margin-bottom: 140px;
     position: fixed;
     z-index: 2;
-  }
-
-  nav #nav-wrapper {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 0;
-  }
-
-  nav #links {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-  }
-
-  nav #links li {
-    margin-left: 50px;
-  }
-  nav #links a {
-    text-decoration: none;
-  }
-  nav #links a > span {
-    color: #fff;
-  }
-  nav #links a span:not(:first-child) {
-    color: var(--accent1-bright);
-  }
-  nav #links a:hover span:not(:first-child) {
-    color: #fff;
+    #nav-wrapper {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 0;
+    }
+    #links {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      li {
+        margin-left: 50px;
+      }
+      a {
+        text-decoration: none;
+        & > span {
+          color: #fff;
+        }
+        span:not(:first-child) {
+          color: var(--accent1-bright);
+        }
+      }
+      a:hover span:not(:first-child) {
+        color: #fff;
+      }
+    }
   }
 
   #logo {
@@ -206,7 +191,7 @@
     flex-direction: column;
   }
   #intro-title #name {
-    font-family: 'TheSeasons', 'arial';
+    font-family: 'TheSeasons';
     font-size: 12rem;
     text-align: center;
   }
@@ -234,8 +219,6 @@
     width: 35%;
     height: 300px;
     margin: 0 40px 0 20px;
-    /* background-image: url('$lib/images/datemike.png'); */
-    /* background-image: url('https://assets-global.website-files.com/6138c9622e9b54fc73014187/615afa18bda6a353e0fb4724_5c058ac4a0316f6562f614ba_culture-cliches.png'); */
     background-image: url('$lib/images/pfp.png');
     background-position: center;
     background-size: cover;
@@ -250,15 +233,14 @@
     width: 60%;
     line-height: 2;
     font-size: 1rem;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 25px;
   }
   #intro-body #details p {
     //
   }
   #intro-social svg {
     vertical-align: middle;
-    margin: 10px 5px 0 0;
+    margin: 10px 5px 15px 0;
     filter: drop-shadow(rgba(255, 215, 77, 0.6) -1px -1px 2px) drop-shadow(rgba(124, 127, 255, 0.6) 1px 1px 2px);
   }
   #intro-npx {
@@ -294,12 +276,16 @@
 
   #backstory-container {
     background-color: var(--accent1-bright);
+    padding-bottom: 50px;
   }
   #backstory {
     position: absolute;
     top: -50px;
   }
   #backstory-top-wave {
+    position: relative;
+  }
+  #backstory-top-waves {
     position: relative;
   }
   #backstory-container a {
@@ -310,7 +296,7 @@
   }
   #backstory-content {
     position: relative;
-    margin-top: 100px;
+    margin-top: -70px;
     color: var(--accent1-dark);
   }
   #backstory-text p {
@@ -322,10 +308,27 @@
   #backstory-text p:last-child {
     margin-bottom: 0px;
   }
-  #backstory-bottom-wave {
-    position: absolute;
-    z-index: -1;
-    background-color: #04150d;
+  #backstory-bottom-waves {
+    position: relative;
+  }
+
+  #bottom-section {
+    #bottom-section-bg {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      // background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1514125669375-59ee3985d08b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4000&q=80);
+      // background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1613631389724-e47543a220a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80);
+      // background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1570133435573-fcb96d98f69b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4000&q=80);
+      background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1514125669375-59ee3985d08b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4000&q=80);
+      background-size: cover;
+    }
+    #bottom-section-grain {
+      position: absolute;
+      height: 1200px;
+      width: 100%;
+      background-image: url('$lib/images/grain.png');
+    }
   }
 
   #experience-container {
@@ -334,9 +337,8 @@
     #typewriter {
       position: relative;
       width: 100%;
-      height: 350px;
-      /* background-image: url('$lib/images/datemike.png'); */
-      /* background-image: url('https://assets-global.website-files.com/6138c9622e9b54fc73014187/615afa18bda6a353e0fb4724_5c058ac4a0316f6562f614ba_culture-cliches.png'); */
+      height: 300px;
+      margin-bottom: 20px;
       background-image: url('$lib/images/typewriter-plants.jpg');
       background-position: center right;
       background-size: cover;
@@ -344,7 +346,6 @@
       mask-image: url('$lib/images/blob.svg');
       -webkit-mask-repeat: no-repeat;
       mask-repeat: no-repeat;
-      // filter: grayscale(1) brightness(0.9);
       filter: hue-rotate(22deg) grayscale(0.8);
     }
   }
@@ -354,7 +355,7 @@
   }
   #experience-content {
     position: relative;
-    margin-top: 270px;
+    margin-top: -100px;
     margin-bottom: 150px;
   }
   #experience-content {
@@ -364,94 +365,96 @@
     position: absolute;
     z-index: 1;
   }
-  .accent-box {
-    padding: 10px;
-    border: 2px solid var(--accent1-dim);
-    background-color: #00000033;
-  }
   .primary-box {
-    padding: 10px;
-    border: 2px solid var(--primary);
+    padding: 20px;
+    border: 1px solid var(--primary);
     background-color: #00000033;
   }
   .experience-role {
     margin-bottom: 5px;
   }
 
-  #showcase-container {
-    #showcase {
-      position: absolute;
-      top: 0;
-    }
-    #showcase-bg {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      /* background-image: radial-gradient(#15944615, #00000029), url(https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format); */
-      /* background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format); */
-      /* background-image: radial-gradient(#10101af0, #000000), url(https://images.unsplash.com/photo-1514125669375-59ee3985d08b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4000&q=80); */
-      background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1514125669375-59ee3985d08b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4000&q=80);
-      background-size: cover;
-      z-index: -1;
-      /* box-shadow: inset 0px -30px 50px 20px #101418; */
-    }
-    #showcase-grain {
-      position: absolute;
-      height: 1200px;
-      width: 100%;
-      background-image: url('$lib/images/grain.png');
-      z-index: -1;
-    }
-    #showcase-content {
-      position: relative;
-      top: 150px;
-      margin-bottom: 400px;
-      color: var(--accent1-dim);
-    }
-    #showcase-text {
-      color: #fff;
-      font-size: 1rem;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-  }
-
-  #connect-container {
+  #contact-container {
     position: relative;
     background-color: var(--accent1-bright);
-    #connect-top-wave {
+    #contact-top-wave {
       position: absolute;
       top: -300px;
       transform: rotate(180deg);
     }
-    #connect-bottom-wave {
+    #contact-bottom-wave {
       position: absolute;
     }
-    #connect-container a {
+    #contact-container a {
     color: var(--accent1-darkest);
     }
-    #connect-container a:hover {
+    #contact-container a:hover {
       color: var(--accent1-dark);
     }
-    #connect {
+    #contact {
       position: absolute;
       top: 0;
     }
-    #connect-content {
+    #contact-content {
       position: relative;
+      top: -30px;
       color: var(--accent1-dark);
     }
-    #connect-text {
+    #contact-text {
       color: var(--accent1-darkest);
-      font-size: 1rem;
-      line-height: 1.5;
+      display: flex;
+      #contact-plane-wrapper {
+        position: relative;
+        top: -30px;
+        margin-right: 30px;
+        transform: scale(1.3);
+      }
     }
   }
 
   footer {
+    padding-bottom: 70px;
     #footer-content {
       position: relative;
-      margin-top: 200px;
+      margin-top: 150px;
+    }
+    #footer-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      nav {
+        display: flex;
+        align-items: center;
+        a {
+          text-decoration: none;
+        }
+      }
+      #footer-pfp {
+        position: relative;
+        width: 160px;
+        height: 130px;
+        margin: 0 20px;
+        background-image: url('$lib/images/pfp.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-mask-image: url('$lib/images/blob1.svg');
+        mask-image: url('$lib/images/blob.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        filter: grayscale(1) brightness(0.9) contrast(1.3);
+      }
+      #footer-info {
+        #footer-name {
+          font-family: 'TheSeasons';
+          font-size: 2rem;
+          margin-bottom: 5px;
+        }
+        #footer-details {
+          font-size: .8rem;
+          color: var(--grey);
+        }
+      }
     }
   }
 
@@ -581,7 +584,7 @@
   }
 
   .crt::before {
-    content: " ";
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -589,13 +592,13 @@
     bottom: 0;
     right: 0;
     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    z-index: 2;
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
+    z-index: 2;
   }
 
   .crt::after {
-    content: " ";
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -604,9 +607,9 @@
     right: 0;
     background: rgba(18, 16, 16, 0.1);
     opacity: 0;
-    z-index: 2;
     pointer-events: none;
     animation: flicker 0.15s infinite;
+    z-index: 2;
   }
 
   @keyframes flicker {
@@ -656,9 +659,9 @@
   <div id="hero">
     <div id="hero-bg" />
     <div id="hero-grain" />
-    <img id="nav-wave" src={Wave1} alt="aesthetic wave background" />
-    <nav>
-      <img id="nav-bg" src={NavBg} alt="nav background" style="opacity: {scrollPosition < 160 ? scrollPosition / 150 : 1};">
+    <img id="hero-bottom-wave" src={Wave1} alt="aesthetic wave background" />
+    <nav id="main-nav">
+      <img id="nav-bg" src={NavBg} alt="nav background" style="opacity: {scrollPosition < 160 ? scrollPosition / 150 : .92};">
       <div id="nav-wrapper" class="centered-content">
         <div id="logo">
           <a href="/">T.S.</a>
@@ -667,7 +670,7 @@
           <li><a href="#backstory"><span>01.</span> <span>Backstory</span></a></li>
           <li><a href="#expertise"><span>02.</span> <span>Expertise</span></a></li>
           <li><a href="#showcase"><span>03.</span> <span>Showcase</span></a></li>
-          <li><a href="#connect"><span>04.</span> <span>Connect</span></a></li>
+          <li><a href="#contact"><span>04.</span> <span>Contact</span></a></li>
           <li><a href="/resume" class="button-styles">Résumé</a></li>
         </ul>
       </div>
@@ -684,10 +687,10 @@
         <div id="pfp" />
         <code id="details" class="crt">
           <p>
-            I'm a self-motivated full-stack software engineer with an affinity for front-end and good vibes 🤙. Currently, I'm developing commerce system tools and services at <a href="https://www.blizzard.com">Blizzard Entertainment</a>.
+            I'm a self-motivated full-stack software engineer--that knows how to exit Vim--with an affinity for front-end and good vibes 🤙. Currently, I'm developing commerce system tools and services at <a href="https://www.blizzard.com">Blizzard Entertainment</a>.
           </p>
           <br />
-          <p>Check me out elsewhere on the web...</p>
+          <p>Check me out on social and run me in the terminal:</p>
           <div id="intro-social">
             <a href="/twitter">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
@@ -699,7 +702,6 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             </a>
           </div>
-          <br />
           <div id="intro-npx" title="run me in the terminal (with node installed)">
             <span>></span>
             &nbsp;
@@ -710,32 +712,30 @@
         </code>
       </div>
     </div>
-    {#if scrollPosition < 600}
-      <a href="#backstory">
-        <svg id="chevrons-down" transition:fade xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-down"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
-      </a>
-    {/if}
+    <a href="#backstory">
+      <svg id="chevrons-down" transition:fade xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-down"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+    </a>
   </div>
 
   <div id="backstory-container" class="section-container">
     <div id="backstory" />
-    <img id="backstory-top-wave" src={NavBg} alt="backstory background">
+    <img id="backstory-top-waves" src={WavesStacked_GY} alt="waves stack green to yellow">
     <div id="backstory-content" class="centered-content">
       <p class="section-number">01.</p>
-      <h2 class="section-title" style="color: var(--accent1-dark)">Backstory</h2>
-      <h3 class="section-subtitle" style="color: var(--accent1-darker);">A bit about me</h3>
-      <Columbus />
-      <Irvine />
-      <Canada />
-      <Caribbean />
-      <Nyc />
+      <h2 class="section-title">Backstory</h2>
+      <h3 class="section-subtitle">A bit about me</h3>
+      <span style="color: #2c4170;"><Columbus /></span>
+      <span style="color: #6e1717"><Irvine /></span>
+      <span style="color: #a53030;"><Canada /></span>
+      <span style="color: #444f5f;"><Caribbean /></span>
+      <span style="color: #594129;"><Nyc /></span>
       <div id="backstory-text">
         <p>Hello! I'm a senior software engineer from Irvine, CA.</p>
-        <Europe />
-        <Mexico />
-        <h4 class="section-heading">TL;DR</h4>
-        <p style="margin-bottom: 15px;">I started programming in my early teens, took a detour into a design, then went fully into software development and gained a lot of great experience. I'm usually <a href="https://www.psychologytoday.com/us/blog/building-the-habit-hero/202008/two-types-passion-harmonious-vs-obsessive#:~:text=Harmonious%20passion%20is%20linked%20to%20%E2%80%9Cflow%20state%E2%80%9D" target="_blank" rel="noopener">harmoniously</a> but sometimes <a href="https://www.psychologytoday.com/us/blog/building-the-habit-hero/202008/two-types-passion-harmonious-vs-obsessive#:~:text=the%20activity%20overpowers%20the%20person" target="_blank" rel="noopener">obsessively</a> passionate about soccer, family, and building software. I also really like tea, plants, and board games.</p>
-        <h5 class="section-subheading">Early days</h5>
+        <span style="color: #6e1717;"><Europe /></span>
+        <span style="color: #244e2b;"><Mexico /></span>
+        <p>My interest in tech started long ago: programming calculators, designing game mods, and developing static websites. I started off my career in design, transitioned to engineering, and I've now had years of experience working in collaborative agile environments across multiple industries. Along the way I've excelled in front-end web and have grown into back-end development. I enjoy what I do, I make work fun, and I empower my teammates to be successful.</p>
+        <p>I am <a href="https://www.psychologytoday.com/us/blog/building-the-habit-hero/202008/two-types-passion-harmonious-vs-obsessive#:~:text=Harmonious%20passion%20is%20linked%20to%20%E2%80%9Cflow%20state%E2%80%9D" target="_blank" rel="noopener">harmoniously passionate</a> about family, soccer, and software. I also enjoy board games, pixel art, hiking, plants, and tea.</p>
+        <!-- <h5 class="section-subheading">Early days</h5>
         <BootOnBall />
         <p>When I was twelve my dad noticed my interest in the web and dropped a stack of HTML books on my desk. He told me to get to it and the rest is history; let me tell you a bit about that history...</p>
         <p>In my teens I learned HTML and built fan sites for bands, movies, and games; I programmed graphing calculators in TI-BASIC; and I designed maps and game modes for one of the first-ever MMO (massively multiplayer online) games: <a href="https://en.wikipedia.org/wiki/SubSpace_(video_game)">Subspace</a>.</p>
@@ -744,213 +744,74 @@
         <h5 class="section-subheading">Here and now</h5>
         <Tea />
         <p>I've now had years of experience working in collaborative agile environments across multiple industries. Along the way I've excelled in front-end web and have grown into back-end development. I enjoy what I do, I make work fun, and I empower my teammates to be successful.</p>
-        <p>I'm married with a couple of kids now, still play soccer, drink a lot of tea, enjoy growing plants, and love board games.</p>
+        <p>I'm married with a couple of kids now, still play soccer, drink a lot of tea, enjoy growing plants, and love board games.</p> -->
       </div>
     </div>
   </div>
-  <img id="backstory-bottom-wave" src={Wave2} alt="aesthetic wave background" />
+  <img id="backstory-bottom-waves" src={WavesStacked_YG} alt="waves stack green to yellow">
 
   <div id="experience-container" class="section-container">
     <div id="experience" />
-    <div id="experience-content" class="centered-content" style="z-index: 1;">
+    <div id="experience-content" class="centered-content">
       <p class="section-number" style="right: 0;" title="Expertise">02.</p>
-      <h2 class="section-title" style="text-align: right;">Expertise</h2>
-      <h3 class="section-subtitle" style="text-align: right; color: var(--accent1-bright);">What I can do and have done</h3>
-      <div style="display: flex;">
-        <div style="display: flex; flex-direction: column; margin: 0 auto; margin-right: 30px; width: 40%;">
-          <!-- <LaptopGuy /> -->
-          <div id="typewriter" />
-          <!-- <LaptopGuyBlob /> -->
-          <h4 class="section-heading">Technologies</h4>
-          <p style="font-size: .9rem; margin-bottom: 20px; color: #ffffff66">From plotting vectors to querying databases and everything in between, I love learning and developing my skillset.</p>
-          <div style="display: flex;">
-            <VerticalDivider text="Stack" />
-            <table class="accent-box" style="white-space: nowrap;">
-              <tr style="color: #fff">
-                <th>Platform</th>
-                <th>Technology</th>
-                <th>Experience</th>
-              </tr>
-              <tr>
-                <td rowspan="2">Design</td>
-                <td>Adobe Suite</td>
-                <td class="blocks">{@html blocks(5)}</td>
-              </tr>
-              <tr>
-                <td>Figma</td>
-                <td class="blocks">{@html blocks(3)}</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  <hr />
-                </td>
-              </tr>
-              <tr>
-                <td rowspan="10">Browser</td>
-                <td>Angular</td>
-                <td class="blocks">{@html blocks(2)}</td>
-              </tr>
-              <tr>
-                <td>Angular.js</td>
-                <td class="blocks">{@html blocks(5)}</td>
-              </tr>
-              <tr>
-                <td>CSS/SCSS</td>
-                <td class="blocks">{@html blocks(5)}</td>
-              </tr>
-              <tr>
-                <td>HTML</td>
-                <td class="blocks">{@html blocks(6)}</td>
-              </tr>
-              <tr>
-                <td>JavaScript</td>
-                <td class="blocks">{@html blocks(6)}</td>
-              </tr>
-              <tr>
-                <td>jQuery</td>
-                <td class="blocks">{@html blocks(5)}</td>
-              </tr>
-              <tr>
-                <td>React</td>
-                <td class="blocks">{@html blocks(6)}</td>
-              </tr>
-              <tr>
-                <td>Svelte</td>
-                <td class="blocks">{@html blocks(3)}</td>
-              </tr>
-              <tr>
-                <td>TypeScript</td>
-                <td class="blocks">{@html blocks(5)}</td>
-              </tr>
-              <tr>
-                <td>Vue</td>
-                <td class="blocks">{@html blocks(1)}</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  <hr />
-                </td>
-              </tr>
-              <tr>
-                <td rowspan="1">Mobile</td>
-                <td>React Native</td>
-                <td class="blocks">{@html blocks(5)}</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  <hr />
-                </td>
-              </tr>
-              <tr>
-                <td>Arduino</td>
-                <td>C++</td>
-                <td class="blocks">{@html blocks(1)}</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  <hr />
-                </td>
-              </tr>
-              <tr>
-                <td rowspan="5">Server</td>
-                <td>C#</td>
-                <td class="blocks">{@html blocks(1)}</td>
-              </tr>
-              <tr>
-                <td>Go</td>
-                <td class="blocks">{@html blocks(1)}</td>
-              </tr>
-              <tr>
-                <td>Java/Spring</td>
-                <td class="blocks">{@html blocks(4)}</td>
-              </tr>
-              <tr>
-                <td>Node.js</td>
-                <td class="blocks">{@html blocks(5)}</td>
-              </tr>
-              <tr>
-                <td>PHP/Laravel</td>
-                <td class="blocks">{@html blocks(3)}</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  <hr />
-                </td>
-              </tr>
-              <tr>
-                <td rowspan="3">Cloud</td>
-                <td>AWS</td>
-                <td class="blocks">{@html blocks(3)}</td>
-              </tr>
-              <tr>
-                <td>Azure</td>
-                <td class="blocks">{@html blocks(1)}</td>
-              </tr>
-              <tr>
-                <td>GCP</td>
-                <td class="blocks">{@html blocks(1)}</td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  <hr />
-                </td>
-              </tr>
-              <tr>
-                <td rowspan="2">Database</td>
-                <td>NoSQL</td>
-                <td class="blocks">{@html blocks(2)}</td>
-              </tr>
-              <tr>
-                <td>SQL</td>
-                <td class="blocks">{@html blocks(3)}</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div style="width: 60%;">
+      <h2 class="section-title" style="text-align: right; color: var(--grey);">Expertise</h2>
+      <h3 class="section-subtitle" style="text-align: right; color: var(--accent1-dim);">My experience in tech</h3>
+      <div style="display: flex; gap: 3%;">
+
+        <div style="width: 62%;">
           <h4 class="section-heading">Work History</h4>
-          <p style="font-size: .9rem; margin-bottom: 20px; color: #ffffff66">Some information about the companies I worked for and experience in that industries, as well as my role on each team. See my <a href="/resume">résumé</a> for a concise and printable version.</p>
+          <p style="font-size: .9rem; margin-bottom: 20px; color: #ffffff66">Some information about each of the companies I've worked for and my role on the team. See my <a href="/resume">résumé</a> for a concise and printable version.</p>
           <div style="display: flex; width: 100%;">
             <VerticalDivider text="Time" />
             <div style="width: 100%;">
+
               <div class="accent-box">
-                <h3><a href="https://www.blizzard.com" style="display: inline-block; margin-bottom: 10px;">Blizzard Entertainment</a></h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                  <h3 style="color: white;">Blizzard Entertainment</h3>
+                  <a href="https://www.blizzard.com" target="__blank">
+                    <ExternalLinkIcon --size="16px" />
+                  </a>
+                </div>
                 <div class="experience-role">
                   <p style="font-size: .8rem; color: var(--grey);"><em>Sept 2021 - Present</em></p>
-                  <p style="color: #fff;">Senior Software Engineer</p>
+                  <p>Senior Software Engineer</p>
                 </div>
                 <div class="experience-role">
                   <p style="font-size: .8rem; color: var(--grey);"><em>May 2020 - Sept 2021</em></p>
-                  <p style="color: #fff;">Software Engineer</p>
+                  <p>Software Engineer</p>
                 </div>
                 <hr style="margin: 10px 0;" />
                 <details>
                   <summary>
                     <svg class="small details-chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    <p style="margin-left: 5px;">Details...</p>
+                    <p style="margin-left: 5px; font-size: .9rem;">Details...</p>
                   </summary>
                   <div>
                     <p>The work I do on the Blizzard commerce platform powers monetization across ABK game studios and critically impacts hundreds of millions of end users. My team proudly provides tools to manage commerce data and APIs to access that data, which are used by game clients, web shops, and more.</p>
                     <br />
-                    <p>Additionally, I contribute to internal design systems, post to the engineering blog, formally mentor junior engineers, and helped build <a href="src/lib/video/zoombot-short-clip.mp4" target="_blank" rel="noopener">Zoombot&trade;</a> which won <em>Battle.net Hackathon, 2022</em>!</p>
+                    <p>Additionally, I contribute to internal design systems, post to the engineering blog, formally mentor junior engineers, and helped build <a href="src/lib/video/zoombot-short-clip.mp4" target="_blank" rel="noopener">Zoombot&trade;</a> which got second place in the <em>Battle.net Hackathon, 2022</em>!</p>
                   </div>
                 </details>
               </div>
-              <div style="display: flex; align-items: center; flex-direction: column; margin: 10px 0;">
-                <div style="height: 25px; width: 80%; border: 1px dashed #fff; border-top: none; border-right: none;"></div>
-                <div style="height: 25px; width: 80%; border: 1px dashed #fff; border-top: none; border-bottom: none; border-left: none;"></div>
-              </div>
-              <div class="accent-box" style="text-align: right;">
-                <h3><a href="https://www.restaurant365.com" style="display: inline-block; margin-bottom: 10px;">Restaurant365</a></h3>
+
+              <br />
+
+              <div class="accent-box">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                  <h3 style="color: white;">Restaurant365</h3>
+                  <a href="https://www.restaurant365.com" target="__blank">
+                    <ExternalLinkIcon --size="16px" />
+                  </a>
+                </div>
                 <div class="experience-role">
                   <p style="font-size: .8rem; color: var(--grey);"><em>Oct 2019 - May 2020</em></p>
-                  <p style="color: #fff;">Software Engineer</p>
+                  <p>Software Engineer</p>
                 </div>
                 <hr style="margin: 10px 0;" />
                 <details>
-                  <summary style="justify-content: flex-end;">
+                  <summary>
                     <svg class="small details-chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    <p style="margin-left: 5px;">Details...</p>
+                    <p style="margin-left: 5px; font-size: .9rem;">Details...</p>
                   </summary>
                   <div>
                     <p>Restaurant365 provides enterprise management software to over 40,000 restaurants nationwide.</p>
@@ -959,25 +820,29 @@
                   </div>
                 </details>
               </div>
-              <div style="display: flex; align-items: center; flex-direction: column; margin: 10px 0;">
-                <div style="height: 25px; width: 80%; border: 1px dashed #fff; border-top: none; border-left: none;"></div>
-                <div style="height: 25px; width: 80%; border: 1px dashed #fff; border-top: none; border-bottom: none; border-right: none;"></div>
-              </div>
+
+              <br />
+
               <div class="accent-box">
-                <h3><a href="https://www.ytel.com" style="display: inline-block; margin-bottom: 10px;">Ytel</a></h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                  <h3 style="color: white;">Ytel</h3>
+                  <a href="https://www.ytel.com" target="__blank">
+                    <ExternalLinkIcon --size="16px" />
+                  </a>
+                </div>
                 <div class="experience-role">
                   <p style="font-size: .8rem; color: var(--grey);"><em>May 2017 - Sept. 2019</em></p>
-                  <p style="color: #fff;">Software Engineer</p>
+                  <p>Software Engineer</p>
                 </div>
                 <div class="experience-role">
                   <p style="font-size: .8rem; color: var(--grey);"><em>Mar 2017 - May 2017</em></p>
-                  <p style="color: #fff;">Web Developer</p>
+                  <p>Web Developer</p>
                 </div>
                 <hr style="margin: 10px 0;" />
                 <details>
                   <summary>
                     <svg class="small details-chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    <p style="margin-left: 5px;">Details...</p>
+                    <p style="margin-left: 5px; font-size: .9rem;">Details...</p>
                   </summary>
                   <div>
                     <p>Ytel offers a variety of telecommunications software solutions ranging from call center systems, to APIs (think Twilio), to automated SMS campaigns with reactive event handling (decision tree).</p>
@@ -986,25 +851,53 @@
                   </div>
                 </details>
               </div>
-              <div style="display: flex; align-items: center; flex-direction: column; margin: 10px 0;">
-                <div style="height: 25px; width: 80%; border: 1px dashed #fff; border-top: none; border-right: none;"></div>
-                <div style="height: 25px; width: 80%; border: 1px dashed #fff; border-top: none; border-bottom: none; border-left: none;"></div>
+
+              <br />
+
+              <div class="accent-box">
+                <div style="margin-bottom: 10px;">
+                  <h3 style="color: white;">Freelance</h3>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <div class="experience-role">
+                    <p style="font-size: .8rem; color: var(--grey);"><em>Dec. 2016 - Feb. 2017</em></p>
+                    <p>Ann Ackerman Realtor Website</p>
+                  </div>
+                  <a href="https://annackerman.com" target="__blank">
+                    <ExternalLinkIcon --size="16px" />
+                  </a>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <div class="experience-role">
+                    <p style="font-size: .8rem; color: var(--grey);"><em>Dec. 2016 - Feb. 2017</em></p>
+                    <p>Love Formula Game Website /</p>
+                    <p>Gwin Games Logo and Print Materials</p>
+                  </div>
+                  <a href="http://loveformulagame.com" target="__blank">
+                    <ExternalLinkIcon --size="16px" />
+                  </a>
+                </div>
               </div>
-              <div class="accent-box" style="text-align: right;">
-                <h3><span style="display: inline-block; margin-bottom: 10px; font-weight: bold;">Mixed Media Group</span></h3>
+
+              <br />
+
+              <div class="accent-box">
+                <div style="margin-bottom: 10px;">
+                  <h3 style="color: white;">Mixed Media Group</h3>
+                </div>
                 <div class="experience-role">
                   <p style="font-size: .8rem; color: var(--grey);"><em>July 2013 - Oct. 2016</em></p>
-                  <p style="color: #fff;">Design Lead</p>
+                  <p>Design Lead</p>
                 </div>
                 <div class="experience-role">
                   <p style="font-size: .8rem; color: var(--grey);"><em>June 2011 - July 2013</em></p>
-                  <p style="color: #fff;">Web and Graphic Designer</p>
+                  <p>Designer</p>
                 </div>
                 <hr style="margin: 10px 0;" />
                 <details>
-                  <summary style="justify-content: flex-end;">
+                  <summary>
                     <svg class="small details-chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    <p style="margin-left: 5px;">Details...</p>
+                    <p style="margin-left: 5px; font-size: .9rem;">Details...</p>
                   </summary>
                   <div>
                     <p>Mixed Media Group was a talented web and print design agency of about twelve employees at its height; a multi-faceted firm offerring design services in many different contexts.</p>
@@ -1013,7 +906,156 @@
                   </div>
                 </details>
               </div>
+
             </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; margin: 0 auto; width: 35%;">
+          <!-- <div id="typewriter" /> -->
+          <h4 class="section-heading">Skill Set</h4>
+          <p style="font-size: .9rem; margin-bottom: 20px; color: #ffffff66">From plotting vectors to querying databases and everything in between, I am constantly learning and developing.</p>
+          <div style="display: flex;">
+            <VerticalDivider text="Stack" />
+            <table style="white-space: nowrap;">
+              <tr style="font-size: .9rem;">
+                <th>Domain</th>
+                <th>Technology</th>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <hr style="margin-bottom: 5px;" />
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="3" style="font-size: .9rem;">Design</td>
+                <td style="color: white; display: flex; align-items: center;"><PhotoshopIcon --size="16px" />&nbsp;Adobe Suite</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><BalsamiqIcon --size="16px" />&nbsp;Balsamiq</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><FigmaIcon --size="16px" />&nbsp;Figma</td>
+              </tr>
+              <TableRowDashedDivider />
+              <tr>
+                <td rowspan="13" style="font-size: .9rem;">Client</td>
+                <td style="color: white; display: flex; align-items: center;"><AngularIcon --size="16px" />&nbsp;AngularJS</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><AngularIcon --size="16px" />&nbsp;Angular</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><CssIcon --size="16px" />&nbsp;CSS</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><HtmlIcon --size="16px" />&nbsp;HTML</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><JavaScriptIcon --size="16px" />&nbsp;JavaScript</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><JqueryIcon --size="16px" />&nbsp;jQuery</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><ReactIcon --size="16px" />&nbsp;React</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><ReactIcon --size="16px" />&nbsp;React Native</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><SassIcon --size="16px" />&nbsp;Sass</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><StorybookIcon --size="16px" />&nbsp;Storybook</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><SvelteIcon --size="16px" />&nbsp;Svelte</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><TypeScriptIcon --size="16px" />&nbsp;TypeScript</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><VueIcon --size="16px" />&nbsp;Vue</td>
+              </tr>
+              <TableRowDashedDivider />
+              <tr>
+                <td rowspan="8" style="font-size: .9rem;">Server</td>
+                <td style="color: white; display: flex; align-items: center;"><ArduinoIcon --size="16px" />&nbsp;Arduino (C++)</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><ExpressIcon --size="16px" />&nbsp;Express</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><GoIcon --size="16px" />&nbsp;Go</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><JavaIcon --size="16px" />&nbsp;Java</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><LaravelIcon --size="16px" />&nbsp;Laravel</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><NodeIcon --size="16px" />&nbsp;Node</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><PhpIcon --size="16px" />&nbsp;PHP</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><SpringIcon --size="16px" />&nbsp;Spring</td>
+              </tr>
+              <TableRowDashedDivider />
+              <tr>
+                <td rowspan="3" style="font-size: .9rem;">Testing</td>
+                <td style="color: white; display: flex; align-items: center;"><PlaywrightIcon --size="16px" />&nbsp;Playwright</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><PostmanIcon --size="16px" />&nbsp;Postman</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><SeleniumIcon --size="16px" />&nbsp;Selenium</td>
+              </tr>
+              <TableRowDashedDivider />
+              <tr>
+                <td rowspan="4" style="font-size: .9rem;">Database</td>
+                <td style="color: white; display: flex; align-items: center;"><FirebaseIcon --size="16px" />&nbsp;Firebase</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><MongoIcon --size="16px" />&nbsp;MongoDB</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><MySqlIcon --size="16px" />&nbsp;MySQL</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><OracleIcon --size="16px" />&nbsp;Oracle</td>
+              </tr>
+              <TableRowDashedDivider />
+              <tr>
+                <td rowspan="8" style="font-size: .9rem;">Infrastructure</td>
+                <td style="color: white; display: flex; align-items: center;"><AwsIcon --size="16px" />&nbsp;AWS</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><AzureIcon --size="16px" />&nbsp;Azure</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><DockerIcon --size="16px" />&nbsp;Docker</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><GitIcon --size="16px" />&nbsp;Git</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><GcpIcon --size="16px" />&nbsp;Google Cloud</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><JenkinsIcon --size="16px" />&nbsp;Jenkins</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><NginxIcon --size="16px" />&nbsp;NGINX</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><BashIcon --size="16px" />&nbsp;Shell scripting</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
@@ -1021,45 +1063,54 @@
   </div>
   <img id="experience-bottom-wave" src={Wave3} alt="aesthetic wave background" />
 
-  <div id="showcase-container" class="section-container">
-    <div id="showcase" />
-    <div id="showcase-bg" />
-    <div id="showcase-grain" />
-    <div id="showcase-content" class="centered-content" style="z-index: 1;">
-      <p class="section-number">03.</p>
-      <h2 class="section-title">Showcase</h2>
-      <h3 class="section-subtitle" style="color: var(--accent1-bright);">Some apps and things I built</h3>
-      <div id="showcase-text">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur blanditiis molestiae, dignissimos a ex quidem, natus ullam, sint eos quia quam nulla autem quibusdam eum commodi ducimus dicta numquam tempora quod eveniet minus earum aliquid delectus qui. Vero quis, saepe molestias, perferendis, corrupti quam adipisci quae impedit doloremque earum sapiente ut ipsum? Fuga aperiam nam porro necessitatibus molestias distinctio. Et corrupti eum facilis, voluptatibus ratione excepturi! Veritatis velit alias odio nihil corporis odit voluptas ad accusantium iste minus maiores saepe tenetur, tempore, ut deserunt quam officiis nemo, cum dicta! Ab veritatis sed sit quo perspiciatis harum unde error quisquam dolorem minus adipisci dolorum, enim aut similique reprehenderit, dicta debitis? Architecto, ut tenetur? Maiores, beatae laboriosam temporibus quidem vitae animi! Saepe harum atque ipsum? Exercitationem quae voluptatum odio sint quam, iure amet earum dolore temporibus libero dolorum beatae sit ex officia necessitatibus nobis dolores, asperiores, velit veritatis. Totam, illum ea iusto sequi in cupiditate necessitatibus fugiat aspernatur doloremque qui culpa saepe, nam minus hic quos doloribus consectetur facere animi dolorum ratione vero deleniti, inventore quas corporis. Molestiae tempora non numquam delectus nihil, porro necessitatibus magnam cumque, pariatur, esse iure reiciendis dolorum fugit soluta assumenda ratione hic ad tenetur. Vero, illo corrupti.
-        </p>
-      </div>
-    </div>
-    <div id="connect-container" class="section-container">
-      <img id="connect-top-wave" src={Wave4} alt="aesthetic wave background" />
-      <div id="connect" />
-      <div id="connect-content" class="centered-content" style="z-index: 1;">
+  <div id="bottom-section" class="section-container">
+    <div id="bottom-section-bg" />
+    <div id="bottom-section-grain" />
+
+    <Showcase />
+
+    <div id="contact-container" class="section-container">
+      <img id="contact-top-wave" src={Wave4} alt="aesthetic wave background" />
+      <div id="contact" />
+      <div id="contact-content" class="centered-content">
         <p class="section-number" style="right: 0;">04.</p>
-        <h2 class="section-title" style="text-align: right;">Connect</h2>
-        <h3 class="section-subtitle" style="text-align: right;">How to get ahold of me</h3>
-        <div id="connect-text">
-          <p>
-            LinkedIn is a great way to connect with me.
-          </p>
+        <h2 class="section-title" style="text-align: right;">Contact</h2>
+        <h3 class="section-subtitle" style="text-align: right;">Send me a note</h3>
+        <div id="contact-text">
+          <div id="contact-plane-wrapper">
+            <PaperPlane />
+          </div>
+          <div style="text-align: right;">
+            <p style="margin-bottom: 30px; text-decoration: none;">
+              I'm currently unavailable for hire, but I'm always open to hear about new ideas from fellow human beings. So if you're good at picking out crosswalks, traffic lights, and bridges in a line-up, I'd love to hear from you! Drop me an email via the button below.
+            </p>
+            <a href="mailto:&#x74;&#x61;&#x79;&#x6c;&#x6f;&#x72;&#x73;&#x74;&#x75;&#x72;&#x74;&#x7a;&commat;&#x67;&#x6d;&#x61;&#x69;&#x6c;&period;&#x63;&#x6f;&#x6d;?subject=Hi Taylor 👋" rel="noopener noreferrer" target="_blank" class="button-styles dark-button-styles">Nothing to see here, bots</a>
+          </div>
         </div>
       </div>
-      <img id="connect-bottom-wave" src={Wave5} alt="aesthetic wave background" />
+      <img id="contact-bottom-wave" src={Wave5} alt="aesthetic wave background" />
     </div>
 
     <footer>
       <div id="footer-content" class="centered-content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat natus recusandae rem qui consequatur, consectetur facilis repellat pariatur modi nesciunt distinctio deserunt sunt aspernatur, assumenda deleniti iusto ipsum adipisci voluptatum, excepturi odit perspiciatis. Cum nihil quod, non aperiam doloremque voluptatibus. Aut ad et ea ut possimus dolores, mollitia repudiandae, eveniet itaque reiciendis voluptatum non quasi reprehenderit vel distinctio corrupti nemo quibusdam praesentium laudantium, cum hic. Natus, cumque esse. Ipsa, alias. Nostrum dolorem consequuntur harum. Unde, consequuntur error praesentium distinctio voluptas perferendis nisi quod est a earum neque accusamus. Quod nemo in ad est eaque nostrum, culpa repudiandae beatae dolorem. Quidem.
-        </p>
+        <div id="footer-wrapper">
+          <div id="footer-pfp" />
+          <div id="footer-info">
+            <p id="footer-name">
+              Taylor Sturtz
+            </p>
+            <div id="footer-details">
+              <p><em>Thanks for stopping by!</em></p>
+              <br />
+              <p>This site was designed and developed</p>
+              <p>by me with a dose of inspiration from</p>
+              <p><a href="https://brittanychiang.com">Brittany Chiang</a>'s (thanks!).</p>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   </div>
-
 
 </main>
 

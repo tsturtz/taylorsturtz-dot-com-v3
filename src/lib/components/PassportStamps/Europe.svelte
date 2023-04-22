@@ -2,7 +2,6 @@
 
 <style>
   svg {
-    color: var(--accent1-dark);
     opacity: 0.7;
     transform: rotate(4deg);
     shape-outside: url($lib/images/europe.svg);
@@ -13,7 +12,7 @@
     right: 90px; */
     float: right;
     padding: 0 0 10px 20px;
-    margin-top: 30px;
+    margin-top: 0px;
   }
 </style>
 

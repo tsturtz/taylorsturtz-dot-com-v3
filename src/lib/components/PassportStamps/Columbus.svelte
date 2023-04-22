@@ -2,14 +2,13 @@
 
 <style>
   svg {
-    color: var(--accent1-dark);
     opacity: 0.7;
     shape-outside: url($lib/images/columbus.svg);
     shape-image-threshold: 0.5;
     shape-margin: 20px;
     position: absolute;
     top: -60px;
-    right: 450px;
+    right: 400px;
   }
 </style>
 

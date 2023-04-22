@@ -6,6 +6,7 @@
   .wrapper {
     display: flex;
     width: 30px;
+    min-width: 30px;
   }
 
   .separator {

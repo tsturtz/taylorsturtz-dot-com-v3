@@ -4,11 +4,6 @@
   svg {
     color: var(--accent1-dark);
     opacity: 0.7;
-    float: right;
-    shape-outside: url($lib/images/ramen.svg);
-    shape-image-threshold: 0.5;
-    shape-margin: 20px;
-    padding: 40px 40px 40px 0;
   }
 </style>
 

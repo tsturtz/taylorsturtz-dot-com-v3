@@ -2,7 +2,6 @@
 
 <style>
   svg {
-    color: var(--accent1-dark);
     opacity: 0.7;
     transform: rotate(-10deg);
     shape-outside: url($lib/images/mexico.svg);
@@ -12,8 +11,8 @@
     top: 30px;
     right: 300px; */
     float: right;
-    padding: 0 0 0 30px;
-    margin-top: 40px;
+    padding: 0 0 20px 30px;
+    margin-top: 10px;
   }
 </style>
 

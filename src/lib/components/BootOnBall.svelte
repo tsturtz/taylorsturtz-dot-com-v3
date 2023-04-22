@@ -1,14 +1,7 @@
-<script lang="ts"></script>
-
 <style>
   svg {
     color: var(--accent1-dark);
     opacity: 0.7;
-    float: left;
-    shape-outside: url($lib/images/boot-on-ball.svg);
-    shape-image-threshold: 0.5;
-    shape-margin: 20px;
-    padding: 40px 40px 40px 0px;
   }
 </style>
 
