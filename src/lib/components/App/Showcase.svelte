@@ -67,7 +67,7 @@
   const taylorSturtzDotComV2: Project = {
     type: ProjectType.WEB,
     title: 'taylor-sturtz-dot-com-v2',
-    metaImage: 'src/lib/images/v2-metaImage.png',
+    metaImage: '$lib/images/v2-metaImage.png',
     stack: ['React', 'Gatsby'],
     githubLink: 'https://github.com/tsturtz/taylorsturtz-dot-com-v2',
     description: `The <strong>previous</strong> iteration of my developer portfolio site. A Gatsby site with a minimal and goofy aesthetic which was fun but it was time for a new one.`,

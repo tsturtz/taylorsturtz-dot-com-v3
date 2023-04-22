@@ -68,8 +68,6 @@
   import Ramen from '$lib/components/Ramen.svelte';
   import Tea from '$lib/components/Tea.svelte';
   import Bicycle from '$lib/components/Bicycle.svelte';
-  import Flamingo from '$lib/images/flamingo.svg';
-  import Blob1 from '$lib/images/blob1.svg';
   import PaperPlane from '$lib/components/PaperPlane.svelte';
 
   // App
@@ -223,7 +221,7 @@
     background-position: center;
     background-size: cover;
     -webkit-mask-image: url('$lib/images/blob1.svg');
-    mask-image: url('$lib/images/blob.svg');
+    mask-image: url('$lib/images/blob1.svg');
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     filter: grayscale(1) brightness(0.9) contrast(1.3);
@@ -334,20 +332,20 @@
   #experience-container {
     background-color: var(--primary);
     margin-bottom: 100px;
-    #typewriter {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      margin-bottom: 20px;
-      background-image: url('$lib/images/typewriter-plants.jpg');
-      background-position: center right;
-      background-size: cover;
-      -webkit-mask-image: url('$lib/images/blob1.svg');
-      mask-image: url('$lib/images/blob.svg');
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      filter: hue-rotate(22deg) grayscale(0.8);
-    }
+    // #typewriter {
+    //   position: relative;
+    //   width: 100%;
+    //   height: 300px;
+    //   margin-bottom: 20px;
+    //   background-image: url('$lib/images/typewriter-plants.jpg');
+    //   background-position: center right;
+    //   background-size: cover;
+    //   -webkit-mask-image: url('$lib/images/blob1.svg');
+    //   mask-image: url('$lib/images/blob1.svg');
+    //   -webkit-mask-repeat: no-repeat;
+    //   mask-repeat: no-repeat;
+    //   filter: hue-rotate(22deg) grayscale(0.8);
+    // }
   }
   #experience {
     position: absolute;
@@ -439,7 +437,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         -webkit-mask-image: url('$lib/images/blob1.svg');
-        mask-image: url('$lib/images/blob.svg');
+        mask-image: url('$lib/images/blob1.svg');
         -webkit-mask-repeat: no-repeat;
         mask-repeat: no-repeat;
         filter: grayscale(1) brightness(0.9) contrast(1.3);
@@ -734,7 +732,7 @@
         <span style="color: #6e1717;"><Europe /></span>
         <span style="color: #244e2b;"><Mexico /></span>
         <p>My interest in tech started long ago: programming calculators, designing game mods, and developing static websites. I started off my career in design, transitioned to engineering, and I've now had years of experience working in collaborative agile environments across multiple industries. Along the way I've excelled in front-end web and have grown into back-end development. I enjoy what I do, I make work fun, and I empower my teammates to be successful.</p>
-        <p>I am <a href="https://www.psychologytoday.com/us/blog/building-the-habit-hero/202008/two-types-passion-harmonious-vs-obsessive#:~:text=Harmonious%20passion%20is%20linked%20to%20%E2%80%9Cflow%20state%E2%80%9D" target="_blank" rel="noopener">harmoniously passionate</a> about family, soccer, and software. I also enjoy board games, pixel art, hiking, plants, and tea.</p>
+        <p>I am <a href="https://www.psychologytoday.com/us/blog/building-the-habit-hero/202008/two-types-passion-harmonious-vs-obsessive#:~:text=Harmonious%20passion%20is%20linked%20to%20%E2%80%9Cflow%20state%E2%80%9D" target="_blank" rel="noreferrer">harmoniously passionate</a> about family, soccer, and software. I also enjoy board games, pixel art, hiking, plants, and tea.</p>
         <!-- <h5 class="section-subheading">Early days</h5>
         <BootOnBall />
         <p>When I was twelve my dad noticed my interest in the web and dropped a stack of HTML books on my desk. He told me to get to it and the rest is history; let me tell you a bit about that history...</p>
@@ -789,7 +787,7 @@
                   <div>
                     <p>The work I do on the Blizzard commerce platform powers monetization across ABK game studios and critically impacts hundreds of millions of end users. My team proudly provides tools to manage commerce data and APIs to access that data, which are used by game clients, web shops, and more.</p>
                     <br />
-                    <p>Additionally, I contribute to internal design systems, post to the engineering blog, formally mentor junior engineers, and helped build <a href="src/lib/video/zoombot-short-clip.mp4" target="_blank" rel="noopener">Zoombot&trade;</a> which got second place in the <em>Battle.net Hackathon, 2022</em>!</p>
+                    <p>Additionally, I contribute to internal design systems, post to the engineering blog, formally mentor junior engineers, and helped build <a href="src/lib/video/zoombot-short-clip.mp4" target="_blank" rel="noreferrer">Zoombot&trade;</a> which got second place in the <em>Battle.net Hackathon, 2022</em>!</p>
                   </div>
                 </details>
               </div>
@@ -847,7 +845,7 @@
                   <div>
                     <p>Ytel offers a variety of telecommunications software solutions ranging from call center systems, to APIs (think Twilio), to automated SMS campaigns with reactive event handling (decision tree).</p>
                     <br />
-                    <p>I started at Ytel as a web developer building marketing sites and internal apps while maintaining their respective DNS and virtual machines. In about three months I was promoted to work on Ytel's suite of software products. I led development on Ytel's modern and legacy applications and then built new tools including real-time <a href="src/lib/images/inbox.gif" target="_blank" rel="noopener">live messaging inbox system</a> and a complex drag and drop <a href="src/lib/images/workflow.png" target="_blank" rel="noopener">workflow editor</a>.</p>
+                    <p>I started at Ytel as a web developer building marketing sites and internal apps while maintaining their respective DNS and virtual machines. In about three months I was promoted to work on Ytel's suite of software products. I led development on Ytel's modern and legacy applications and then built new tools including real-time <a href="src/lib/images/inbox.gif" target="_blank" rel="noreferrer">live messaging inbox system</a> and a complex drag and drop <a href="src/lib/images/workflow.png" target="_blank" rel="noreferrer">workflow editor</a>.</p>
                   </div>
                 </details>
               </div>
@@ -1084,7 +1082,7 @@
             <p style="margin-bottom: 30px; text-decoration: none;">
               I'm currently unavailable for hire, but I'm always open to hear about new ideas from fellow human beings. So if you're good at picking out crosswalks, traffic lights, and bridges in a line-up, I'd love to hear from you! Drop me an email via the button below.
             </p>
-            <a href="mailto:&#x74;&#x61;&#x79;&#x6c;&#x6f;&#x72;&#x73;&#x74;&#x75;&#x72;&#x74;&#x7a;&commat;&#x67;&#x6d;&#x61;&#x69;&#x6c;&period;&#x63;&#x6f;&#x6d;?subject=Hi Taylor 👋" rel="noopener noreferrer" target="_blank" class="button-styles dark-button-styles">Nothing to see here, bots</a>
+            <a href="mailto:&#x74;&#x61;&#x79;&#x6c;&#x6f;&#x72;&#x73;&#x74;&#x75;&#x72;&#x74;&#x7a;&commat;&#x67;&#x6d;&#x61;&#x69;&#x6c;&period;&#x63;&#x6f;&#x6d;?subject=Hi Taylor 👋" target="_blank" rel="noreferrer" class="button-styles dark-button-styles">Nothing to see here, bots</a>
           </div>
         </div>
       </div>

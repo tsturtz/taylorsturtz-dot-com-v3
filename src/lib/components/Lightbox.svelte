@@ -31,7 +31,7 @@
     img {
       z-index: 1;
       max-height: 80vh;
-      max-width: 1200px;
+      max-width: 80vw;
       border-radius: 8px;
       border: 1px solid var(--accent1-dim);
     }
