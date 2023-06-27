@@ -1,20 +1,26 @@
 <script lang="ts">
+  // images
+  import tsV1_img from '$lib/images/demos/taylor-sturtz-dot-com-v1.jpg';
+  import tsV2_img from '$lib/images/demos/taylor-sturtz-dot-com-v2.png';
+  import tsV3_img from '$lib/images/demos/jungle-bg-sm.jpg';
+  import realValue_img from '$lib/images/demos/realvalue.jpg';
+  import realValue_img_anim from '$lib/images/demos/realvalue.gif';
   // util
-  import Button from "../Button.svelte";
+  import Button from '../Button.svelte';
   // app
-  import ShowcaseBox from "./ShowcaseBox.svelte";
+  import ShowcaseBox from './ShowcaseBox.svelte';
   // icons
-  import AwardIcon from "../Icons/AwardIcon.svelte";
-  import CpuIcon from "../Icons/CpuIcon.svelte";
-  import GlobeIcon from "../Icons/GlobeIcon.svelte";
-  import GridIcon from "../Icons/GridIcon.svelte";
-  import MobileIcon from "../Icons/MobileIcon.svelte";
-  import MonitorIcon from "../Icons/MonitorIcon.svelte";
-  import TerminalIcon from "../Icons/TerminalIcon.svelte";
-  import WifiIcon from "../Icons/WifiIcon.svelte";
+  import AwardIcon from '../Icons/AwardIcon.svelte';
+  import CpuIcon from '../Icons/CpuIcon.svelte';
+  import GlobeIcon from '../Icons/GlobeIcon.svelte';
+  import GridIcon from '../Icons/GridIcon.svelte';
+  import MobileIcon from '../Icons/MobileIcon.svelte';
+  import MonitorIcon from '../Icons/MonitorIcon.svelte';
+  import TerminalIcon from '../Icons/TerminalIcon.svelte';
+  import WifiIcon from '../Icons/WifiIcon.svelte';
   // third party
   // svelte
-	import type { ComponentProps, ComponentType } from "svelte";
+	import type { ComponentProps, ComponentType } from 'svelte';
 
   enum ProjectType {
     BOT = 'bot',
@@ -59,7 +65,7 @@
   const taylorSturtzDotComV3: Project = {
     type: ProjectType.WEB,
     title: 'taylor-sturtz-dot-com-v3',
-    metaImage: 'https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',
+    metaImage: tsV3_img,
     stack: ['SvelteKit', 'Sass', 'SVG'],
     githubLink: 'https://github.com/tsturtz/taylorsturtz-dot-com-v3',
     description: `The <strong>current</strong> iteration of my developer portfolio site. Built as an opportunity to learn Svelte and with a creative desire to revamp the site.`,
@@ -67,7 +73,7 @@
   const taylorSturtzDotComV2: Project = {
     type: ProjectType.WEB,
     title: 'taylor-sturtz-dot-com-v2',
-    metaImage: '$lib/images/v2-metaImage.png',
+    metaImage: tsV2_img,
     stack: ['React', 'Gatsby'],
     githubLink: 'https://github.com/tsturtz/taylorsturtz-dot-com-v2',
     description: `The <strong>previous</strong> iteration of my developer portfolio site. A Gatsby site with a minimal and goofy aesthetic which was fun but it was time for a new one.`,
@@ -75,7 +81,7 @@
   const taylorSturtzDotComV1: Project = {
     type: ProjectType.WEB,
     title: 'taylor-sturtz-dot-com-v1',
-    metaImage: 'src/lib/images/demos/taylor-sturtz-dot-com-v1.jpg',
+    metaImage: tsV1_img,
     stack: ['jQuery'],
     githubLink: 'https://github.com/tsturtz/taylorsturtz-dot-com-v1',
     description: `The <strong>first</strong> iteration of my developer portfolio site. A vanilla site with jQuery for all the advantages it provided at the time.`,
@@ -83,8 +89,8 @@
   const realValue: Project = {
     type: ProjectType.WEB,
     title: 'realvalue',
-    metaImage: 'src/lib/images/demos/realvalue.jpg',
-    metaImageAnimated: 'src/lib/images/demos/realvalue.gif',
+    metaImage: realValue_img,
+    metaImageAnimated: realValue_img_anim,
     stack: ['Angular.js', 'D3.js', 'Firebase'],
     externalLink: 'https://realvalue.taylorsturtz.com',
     githubLink: 'https://github.com/tsturtz/realvalue',
@@ -224,38 +230,78 @@
     top: 130px;
     margin-bottom: 400px;
     color: var(--accent1-dim);
+    z-index: 1;
+    .section-heading {
+      display: none;
+      white-space: normal;
+      @include md {
+        display: block;
+        font-size: 3rem;
+      } 
+    }
+    .section-title {
+      color: $grey;
+    }
+    .section-subtitle {
+      color: $accent1-dim;
+    }
+    #showcase-filter {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      gap: 10px;
+      flex-wrap: wrap;
+      .filter-button {
+        display: flex;
+        align-items: center;
+      }
+      .delimiter {
+        color: $grey;
+        margin: 0 5px;
+      }
+      .filter-text {
+        margin-left: 5px;
+      }
+    }
+    #showcase-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
   }
 </style>
 
-<div id="showcase-content" class="centered-content" style="z-index: 1;">
-  <p class="section-number">03.</p>
-  <h2 class="section-title" style="color: var(--grey);">Showcase</h2>
-  <h3 class="section-subtitle" style="color: var(--accent1-dim);">Noteworthy Projects</h3>
-  <!-- <p style="color: var(--grey);">A curated handful of my personal, open source, and hackathon projects.</p> -->
+<div id="showcase-content" class="centered-content">
+  <div class="content-title">
+    <p class="section-number">03.</p>
+    <h2 class="section-title">Showcase</h2>
+    <h3 class="section-subtitle">Noteworthy Projects</h3>
+  </div>
+  <h4 class="section-heading">Noteworthy Projects</h4>
   <br />
 
-  <div style="display: flex; align-items: center; margin-bottom: 25px; gap: 5px;">
+  <div id="showcase-filter">
     <Button class="text" selected={selectedProjectType === null} on:click={() => filter(null)}>
-      <div style="display: flex; align-items: center;">
+      <div class="filter-button">
         <GridIcon --size="16px" />
-        <span style="margin-left: 5px;">All ({projects.length})</span>
+        <span class="filter-text">All ({projects.length})</span>
       </div>
     </Button>
-    <span style="color: var(--grey); margin: 0 5px;">/</span>
+    <span class="delimiter">/</span>
     {#each filterOptions as filterOption, idx}
       <Button class="text" selected={selectedProjectType === filterOption} on:click={() => filter(filterOption)}>
-        <div style="display: flex; align-items: center;">
+        <div class="filter-button">
           <svelte:component this={projectIconMap[filterOption]} --size="16px" />
-          <span style="margin-left: 5px;">{projectFiendlyNameMap[filterOption]} ({projects.filter((project) => project.type === filterOption).length})</span>
+          <span class="filter-text">{projectFiendlyNameMap[filterOption]} ({projects.filter((project) => project.type === filterOption).length})</span>
         </div>
       </Button>
       {#if idx < filterOptions.length - 1}
-        <span style="color: var(--grey); margin: 0 5px;">/</span>
+        <span class="delimiter">/</span>
       {/if}
     {/each}
   </div>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+  <div id="showcase-grid">
     {#each filteredProjects as project}
       <ShowcaseBox
         title={project.title}

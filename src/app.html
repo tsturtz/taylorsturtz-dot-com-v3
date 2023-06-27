@@ -1,15 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Kristi&family=Pinyon+Script&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Kristi&family=Special+Elite&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Capriola&family=Kristi&family=Special+Elite&display=swap" rel="stylesheet">
+		<!-- <meta name="viewport" content="width=device-width" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Kristi&family=Pinyon+Script&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kristi&family=Special+Elite&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Capriola&family=Kristi&family=Special+Elite&display=swap"
+			rel="stylesheet"
+		/>
 		<style>
 			:root {
 				--grey: #737373;
@@ -27,9 +36,9 @@
 				--accent1-darker: #482b00;
 				--accent1-darkest: #231500;
 			}
-			*   {
-				margin:0;
-				padding:0;
+			* {
+				margin: 0;
+				padding: 0;
 				font-family: 'FiraCode';
 			}
 			html {
@@ -51,13 +60,13 @@
 				overflow-x: hidden;
 			}
 			code {
-				background-color: #000;
+				/* background-color: #000; */
+				/* border: 1px solid var(--grey);
+				border-radius: 6px; */
 				padding: 10px 15px;
-				border: 1px solid var(--grey);
-				border-radius: 6px;
 				font-size: 1rem;
 				font-family: 'JetBrainsMono';
-				text-shadow: rgb(255 215 77 / 60%) -1px -1px 6px, rgb(124 127 255 / 60%) 1px 1px 6px;
+				text-shadow: rgb(255 215 77 / 35%) -1px -1px 6px, rgb(124 127 255 / 35%) 1px 1px 6px;
 			}
 			hr {
 				border: none;
@@ -68,17 +77,18 @@
 				text-underline-offset: 3px;
 				color: var(--accent1-bright);
 				font-weight: bold;
-				transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+				transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 			}
 			a:hover {
 				text-decoration: underline solid;
 			}
 			a svg {
-				transition: .2s;
+				transition: 0.2s;
 			}
-			a:hover svg, a:focus svg {
+			a:hover svg,
+			a:focus svg {
 				color: var(--accent1-dim);
-				transform: translateY(-3px);
+				/* transform: translateY(-3px); */
 			}
 			button {
 				font-family: 'FiraCode';
@@ -87,7 +97,7 @@
 				color: var(--accent1-bright);
 				border: 1px solid var(--accent1-bright);
 				border-radius: 5px;
-				transition: .3s;
+				transition: 0.3s;
 			}
 			button:hover {
 				background-color: var(--accent1-dim-semi-transparent);
@@ -99,7 +109,7 @@
 				color: var(--accent1-bright);
 				border: 1px solid var(--accent1-bright);
 				border-radius: 5px;
-				transition: .3s;
+				transition: 0.3s;
 				text-decoration: none;
 			}
 			.button-styles:hover {
@@ -117,7 +127,8 @@
 				text-align: left;
 				padding-bottom: 10px;
 			}
-			table tr th:not(:last-of-type), table tr td:not(:last-of-type) {
+			table tr th:not(:last-of-type),
+			table tr td:not(:last-of-type) {
 				padding-right: 30px;
 				line-height: 22px;
 			}
@@ -153,10 +164,6 @@
 			}
 
 			/* CUSTOM CLASSES/SELECTORS */
-			.centered-content {
-				width: 1000px;
-				margin: 0 auto;
-			}
 			.section-container {
 				position: relative; /* to enable anchor offset */
 				width: 100%;
@@ -205,49 +212,61 @@
 
 			/* FONTS */
 			@font-face {
-				font-family: "TheSeasons";
-				src: local("TheSeasons"), url("%sveltekit.assets%/font/TheSeasons/TheSeasons-reg.otf") format("opentype");
+				font-family: 'TheSeasons';
+				src: local('TheSeasons'),
+					url('%sveltekit.assets%/font/TheSeasons/TheSeasons-reg.otf') format('opentype');
 			}
 			@font-face {
-				font-family: "PigeonScout";
-				src: local("PigeonScout"), url("%sveltekit.assets%/font/PigeonScout/PigeonScout.ttf") format("truetype");
+				font-family: 'PigeonScout';
+				src: local('PigeonScout'),
+					url('%sveltekit.assets%/font/PigeonScout/PigeonScout.ttf') format('truetype');
 			}
 			@font-face {
-				font-family: "MoonLight";
-				src: local("MoonLight"), url("%sveltekit.assets%/font/Moon/MoonLight.otf") format("opentype");
+				font-family: 'MoonLight';
+				src: local('MoonLight'),
+					url('%sveltekit.assets%/font/Moon/MoonLight.otf') format('opentype');
 			}
 			@font-face {
-				font-family: "MoonDark";
-				src: local("MoonDark"), url("%sveltekit.assets%/font/Moon/MoonDark.otf") format("opentype");
+				font-family: 'MoonDark';
+				src: local('MoonDark'), url('%sveltekit.assets%/font/Moon/MoonDark.otf') format('opentype');
 			}
 			@font-face {
-				font-family: "1942";
-				src: local("1942"), url("%sveltekit.assets%/font/1942/1942.ttf") format("truetype");
+				font-family: '1942';
+				src: local('1942'), url('%sveltekit.assets%/font/1942/1942.ttf') format('truetype');
 			}
 			@font-face {
-				font-family: "FiraCode";
-				src: local("FiraCode-Regular"), url("%sveltekit.assets%/font/FiraCode/FiraCode-Regular.ttf") format("truetype");
+				font-family: 'FiraCode';
+				src: local('FiraCode-Regular'),
+					url('%sveltekit.assets%/font/FiraCode/FiraCode-Regular.ttf') format('truetype');
 				font-weight: 400;
 				font-style: normal;
 			}
 			@font-face {
-				font-family: "FiraCode";
-				src: local("FiraCode-Bold"), url("%sveltekit.assets%/font/FiraCode/FiraCode-Bold.ttf") format("truetype");
+				font-family: 'FiraCode';
+				src: local('FiraCode-Bold'),
+					url('%sveltekit.assets%/font/FiraCode/FiraCode-Bold.ttf') format('truetype');
 				font-weight: 700;
 				font-style: normal;
 			}
 			@font-face {
-				font-family: "JetBrainsMono";
-				src: local("JetBrainsMono-Regular"), url("%sveltekit.assets%/font/JetBrainsMono/JetBrainsMono-Regular.ttf") format("truetype");
+				font-family: 'JetBrainsMono';
+				src: local('JetBrainsMono-Regular'),
+					url('%sveltekit.assets%/font/JetBrainsMono/JetBrainsMono-Regular.ttf') format('truetype');
 			}
 			@font-face {
-				font-family: "Garamond";
-				src: local("EBGaramond-Italic-VariableFont_wght"), url("%sveltekit.assets%/font/Garamond/EBGaramond-Italic.ttf") format("truetype");
+				font-family: 'Garamond';
+				src: local('EBGaramond-Italic-VariableFont_wght'),
+					url('%sveltekit.assets%/font/Garamond/EBGaramond-Italic.ttf') format('truetype');
 			}
 
-			@media screen and (max-width: 2000px) {
-				.monstera-group {
-					display: none;
+			@media screen and (min-width: 2500px) {
+				nav#main-nav img#nav-bg {
+					top: -80px;
+				}
+			}
+			@media screen and (min-width: 3200px) {
+				nav#main-nav img#nav-bg {
+					top: -100px;
 				}
 			}
 		</style>

@@ -15,6 +15,7 @@
   export let title: string;
   export let stack: string[];
   export let metaImage: string;
+  // console.log('🚀 ~ metaImage:', metaImage);
   export let metaImageAnimated: string | null = null;
   export let description: string;
   export let externalLink: string | null = null;
@@ -34,6 +35,7 @@
       descLines = Math.ceil(desc!.offsetHeight / fontSize);
       // descLinesOffset = ((descLines - descLinesLimit) * fontSize) - 5; // adjust -5 to clear it
     }
+    console.log(metaImage);
   });
 
   const handleLightboxToggle = () => {
@@ -57,12 +59,16 @@
   }
   .showcase-box {
     // height: 300px;
-    width: 318px;
+    // width: 318px;
+    width: calc(100% / 3 - 13px);
     padding: 0;
     overflow: hidden;
     position: relative;
     transition: .8s cubic-bezier(.42,0,.93,.28);
     background-color: black;
+    @include md {
+      width: 100%;
+    }
     .meta {
       height: var(--meta-height);
       border-radius: 8px 8px 0 0;

@@ -93,6 +93,20 @@
 </script>
 
 <style lang="scss">
+  .section-heading {
+    @include md {
+      font-size: 3rem;
+    }
+  }
+  .section-blurb {
+    font-size: .9rem;
+    margin-bottom: 20px;
+    color: #ffffff66;
+    @include md {
+      display: none;
+    }
+  }
+
   #hero {
     height: 1200px;
     width: 100%;
@@ -102,9 +116,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    /* background-image: radial-gradient(#15944615, #00000029), url(https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format); */
-    background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format);
-    /* background-image: radial-gradient(#10101af0, #000000), url(https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format); */
+    background-image: radial-gradient(#01120ef0, #000000), url('$lib/images/jungle-bg-lg.jpg');
     background-size: cover;
     z-index: -1;
   }
@@ -115,21 +127,30 @@
     background-image: url('$lib/images/grain.png');
     z-index: -1;
   }
-  #nav-bg {
-    position: absolute;
-    top: -40px;
-  }
   #hero-bottom-wave {
     position: absolute;
     bottom: 0;
+    min-width: 2000px;
+  }
+
+  main {
+    overflow-x: hidden;
   }
 
   nav#main-nav {
     height: 120px;
     width: 100%;
+    min-width: 2000px;
     margin-bottom: 140px;
     position: fixed;
     z-index: 2;
+    @include md {
+      display: none;
+    }
+    #nav-bg {
+      position: absolute;
+      top: -40px;
+    }
     #nav-wrapper {
       position: relative;
       height: 100%;
@@ -181,17 +202,37 @@
   #intro-container {
     position: relative;
     padding-top: 220px;
+    @include md {
+      padding-top: 40px;
+    }
     /* background: linear-gradient(90deg, #ffffff01, #ffffff0a, #ffffff01); */
+  }
+  #mobile-banner {
+    text-align: center;
+    margin-top: 70px;
   }
 
   #intro-title {
     display: flex;
     flex-direction: column;
+    width: 90%;
   }
   #intro-title #name {
     font-family: 'TheSeasons';
-    font-size: 12rem;
+    font-size: 8vw;
     text-align: center;
+    white-space: nowrap;
+    @include xxl {
+      font-size: 10.5vw;
+    }
+    @include xl {
+      font-size: 14vw;
+    }
+    @include sm {
+      white-space: pre-line;
+      font-size: 22vw;
+      line-height: 1;
+    }
   }
   #intro-title span {
     font-family: 'Kristi';
@@ -211,35 +252,57 @@
     display: flex;
     align-items: center;
     position: relative;
-  }
-  #intro-body #pfp {
-    position: relative;
-    width: 35%;
-    height: 300px;
-    margin: 0 40px 0 20px;
-    background-image: url('$lib/images/pfp.png');
-    background-position: center;
-    background-size: cover;
-    -webkit-mask-image: url('$lib/images/blob1.svg');
-    mask-image: url('$lib/images/blob1.svg');
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    filter: grayscale(1) brightness(0.9) contrast(1.3);
-  }
-  #intro-body #details {
-    position: relative;
-    width: 60%;
-    line-height: 2;
-    font-size: 1rem;
-    padding: 25px;
-  }
-  #intro-body #details p {
-    //
+    @include md {
+      justify-content: center;
+      flex-direction: column;
+    }
+    #pfp {
+      position: relative;
+      width: 35%;
+      height: 16vw;
+      margin: 0 40px 0 0;
+      background-image: url('$lib/images/pfp.png');
+      background-position: center;
+      background-size: cover;
+      -webkit-mask-image: url('$lib/images/blob1.svg');
+      mask-image: url('$lib/images/blob1.svg');
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      filter: grayscale(1) brightness(0.9) contrast(1.3);
+      @include xxl {
+        height: 21vw;
+      }
+      @include xl {
+        height: 28vw;
+      }
+      @include md {
+        margin: 20px 0;
+        width: 42%;
+        height: 33vw;
+      }
+    }
+    #details {
+      position: relative;
+      width: 60%;
+      line-height: 2;
+      font-size: 1rem;
+      @include md {
+        width: 90%;
+      }
+      p {
+        text-align: justify;
+      }
+      #details-social {
+        @include md {
+          display: none;
+        }
+      }
+    }
   }
   #intro-social svg {
     vertical-align: middle;
     margin: 10px 5px 15px 0;
-    filter: drop-shadow(rgba(255, 215, 77, 0.6) -1px -1px 2px) drop-shadow(rgba(124, 127, 255, 0.6) 1px 1px 2px);
+    filter: drop-shadow(rgba(255, 215, 77, 0.3) -1px -1px 2px) drop-shadow(rgba(124, 127, 255, 0.3) 1px 1px 2px);
   }
   #intro-npx {
     display: flex;
@@ -247,14 +310,19 @@
     width: max-content;
   }
 
-  #chevrons-down {
-    position: absolute;
-    left: 50%;
-    bottom: 175px;
-    transform: scale(1.5) translateX(-50%);
-    color: var(--accent1-bright);
-    opacity: 0.5;
-    animation: bounce 1s infinite;
+  #backstory-link {
+    @include md {
+      display: none;
+    }
+    #chevrons-down {
+      position: absolute;
+      left: 50%;
+      bottom: 175px;
+      transform: scale(1.5) translateX(-50%);
+      color: var(--accent1-bright);
+      opacity: 0.5;
+      animation: bounce 1s infinite;
+    }
   }
 
   @keyframes bounce {
@@ -275,6 +343,9 @@
   #backstory-container {
     background-color: var(--accent1-bright);
     padding-bottom: 50px;
+    @include md {
+      display: none;
+    }
   }
   #backstory {
     position: absolute;
@@ -285,6 +356,7 @@
   }
   #backstory-top-waves {
     position: relative;
+    min-width: 2000px;
   }
   #backstory-container a {
     color: var(--accent1-darkest);
@@ -297,17 +369,24 @@
     margin-top: -70px;
     color: var(--accent1-dark);
   }
-  #backstory-text p {
-    color: var(--accent1-darkest);
-    font-size: 1rem;
-    margin-bottom: 10px;
-    line-height: 1.5;
+  #backstory-text {
+    width: 70%;
+    p {
+      color: var(--accent1-darkest);
+      font-size: 1rem;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
   }
   #backstory-text p:last-child {
     margin-bottom: 0px;
   }
   #backstory-bottom-waves {
     position: relative;
+    min-width: 2000px;
+    @include md {
+      display: none;
+    }
   }
 
   #bottom-section {
@@ -315,10 +394,7 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      // background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1514125669375-59ee3985d08b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4000&q=80);
-      // background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1613631389724-e47543a220a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80);
-      // background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1570133435573-fcb96d98f69b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4000&q=80);
-      background-image: radial-gradient(#01120ef0, #000000), url(https://images.unsplash.com/photo-1514125669375-59ee3985d08b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4000&q=80);
+      background-image: radial-gradient(#01120ef0, #000000), url('$lib/images/palm-tress-bg-lg.jpg');
       background-size: cover;
     }
     #bottom-section-grain {
@@ -332,20 +408,6 @@
   #experience-container {
     background-color: var(--primary);
     margin-bottom: 100px;
-    // #typewriter {
-    //   position: relative;
-    //   width: 100%;
-    //   height: 300px;
-    //   margin-bottom: 20px;
-    //   background-image: url('$lib/images/typewriter-plants.jpg');
-    //   background-position: center right;
-    //   background-size: cover;
-    //   -webkit-mask-image: url('$lib/images/blob1.svg');
-    //   mask-image: url('$lib/images/blob1.svg');
-    //   -webkit-mask-repeat: no-repeat;
-    //   mask-repeat: no-repeat;
-    //   filter: hue-rotate(22deg) grayscale(0.8);
-    // }
   }
   #experience {
     position: absolute;
@@ -355,6 +417,32 @@
     position: relative;
     margin-top: -100px;
     margin-bottom: 150px;
+    @include md {
+      margin-top: -150px;
+    }
+    #experience-content-wrapper {
+      display: flex;
+      gap: 3%;
+      @include md {
+        flex-direction: column-reverse;
+        gap: 80px;
+      }
+      #work-history {
+        width: 62%;
+        @include md {
+          width: 100%;
+        }
+      }
+      #skill-set {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 35%;
+        @include md {
+          width: 100%;
+        }
+      }
+    }
   }
   #experience-content {
     color: var(--accent1-dim);
@@ -362,6 +450,7 @@
   #experience-bottom-wave {
     position: absolute;
     z-index: 1;
+    min-width: 2000px;
   }
   .primary-box {
     padding: 20px;
@@ -379,9 +468,14 @@
       position: absolute;
       top: -300px;
       transform: rotate(180deg);
+      min-width: 2000px;
+      @include md {
+        top: -350px;
+      }
     }
     #contact-bottom-wave {
       position: absolute;
+      min-width: 2000px;
     }
     #contact-container a {
     color: var(--accent1-darkest);
@@ -401,6 +495,10 @@
     #contact-text {
       color: var(--accent1-darkest);
       display: flex;
+      @include md {
+        flex-direction: column;
+        align-items: center;
+      }
       #contact-plane-wrapper {
         position: relative;
         top: -30px;
@@ -420,6 +518,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @include md {
+        flex-direction: column-reverse;
+        gap: 40px;
+        align-items: baseline;
+      }
       nav {
         display: flex;
         align-items: center;
@@ -457,7 +560,7 @@
   }
 
   .monstera-group {
-    position: relative;
+    position: sticky;
     z-index: 3;
   }
 
@@ -466,11 +569,12 @@
     animation: rotate 1s linear infinite;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
-    transform: rotate(var(--scroll));
+    // transform: rotate(var(--scroll));
   }
 
   /* 1a */
   img#monstera1a {
+    top: -30px;
     filter: brightness(100%) drop-shadow(-5px -5px 10px rgba(0, 0, 0, 0.3)) blur(.5px);
     z-index: 3;
     transform-origin: top left;
@@ -480,6 +584,7 @@
   /* 1b */
   img#monstera1b {
     right: 80px;
+    top: 100px;
     filter: brightness(60%) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2)) blur(1px);
     transform: rotate(54deg);
     transform-origin: top right;
@@ -488,10 +593,10 @@
   @keyframes sway-monstera-1b { 0% { transform: rotate(54deg); } 100% { transform: rotate(50deg); } }
   /* 2a */
   img#monstera2a {
-    top: 420px;
+    top: 380px;
     right: 0;
     filter: brightness(90%) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2)) blur(1px);
-    z-index: 3;
+    z-index: 1;
     transform-origin: top right;
     animation: sway-monstera-2a 8s ease-in-out infinite alternate forwards;
   }
@@ -499,6 +604,7 @@
   /* 2b */
   img#monstera2b {
     top: 350px;
+    left: -130px;
     filter: brightness(60%) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2)) blur(1px);
     transform: rotate(-80deg);
     transform-origin: top left;
@@ -507,7 +613,9 @@
   @keyframes sway-monstera-2b { 0% { transform: rotate(-80deg); } 100% { transform: rotate(-81deg); } }
   /* 2c */
   img#monstera2c {
-    top: 520px;
+    top: 480px;
+    left: -280px;
+    z-index: 1;
     filter: brightness(70%) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2)) blur(1px);
     transform: rotate(245deg);
     transform-origin: top right;
@@ -526,17 +634,14 @@
   @keyframes sway-monstera-3a { 0% { transform: rotate(0deg); } 100% { transform: rotate(2deg); } }
   /* 3b */
   img#monstera3b {
-    left: 200px;
+    top: 150px;
+    left: 140px;
     filter: brightness(80%) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2)) blur(1px);
     transform: rotate(-72deg);
     transform-origin: top left;
     animation: sway-monstera-3b 6s ease-in-out infinite alternate forwards;
   }
   @keyframes sway-monstera-3b { 0% { transform: rotate(-70deg); } 100% { transform: rotate(-72deg); } }
-
-  .text-line {
-    /* filter: drop-shadow(rgba(255, 215, 77, 0.6) -1px -1px 2px) drop-shadow(rgba(124, 127, 255, 0.6) 1px 1px 2px); */
-  }
 
   .text-line text {
     stroke-dasharray: 100;
@@ -637,21 +742,19 @@
 
 <svelte:window bind:scrollY={scrollPosition}/>
 
-{#if scrollPosition < 400}
-  <!-- left -->
-  <div class="monstera-group monstera-group-left" style="transform: rotate({scrollPosition / 20}deg); opacity: {1 - (scrollPosition * .0001)}; filter: blur({scrollPosition * .03}px)">
-    <img id="monstera1a" class="monstera-leaf" src={MonsteraLeaf1} alt="a monstera leaf" width="500" style="top: {-30 - scrollPosition / 2}px;" />
-    <img id="monstera2b" class="monstera-leaf" src={MonsteraLeaf2} alt="a monstera leaf" width="430" style="left: {-130 - scrollPosition / 2}px;" />
-    <img id="monstera2c" class="monstera-leaf" src={MonsteraLeaf2} alt="a monstera leaf" width="250" style="left: {-300 - scrollPosition / 2}px;" />
-    <img id="monstera3b" class="monstera-leaf" src={MonsteraLeaf3} alt="a monstera leaf" width="250" style="top: {170 - scrollPosition}px;" />
-  </div>
-  <!-- right -->
-  <div class="monstera-group monstera-group-right" style="transform: rotate(-{scrollPosition / 20}deg); opacity: {1 - (scrollPosition * .0001)}; filter: blur({scrollPosition * .03}px)">
-    <img id="monstera1b" class="monstera-leaf" src={MonsteraLeaf1} alt="a monstera leaf" width="300" style="top: {120 - scrollPosition}px;" />
-    <img id="monstera2a" class="monstera-leaf" src={MonsteraLeaf2} alt="a monstera leaf" width="350" style="right: {0 - scrollPosition}px;" />
-    <img id="monstera3a" class="monstera-leaf" src={MonsteraLeaf3} alt="a monstera leaf" width="470" />
-  </div>
-{/if}
+<!-- left -->
+<div class="monstera-group monstera-group-left">
+  <img id="monstera1a" class="monstera-leaf" src={MonsteraLeaf1} alt="a monstera leaf" width="400" />
+  <img id="monstera2b" class="monstera-leaf" src={MonsteraLeaf2} alt="a monstera leaf" width="350" />
+  <img id="monstera2c" class="monstera-leaf" src={MonsteraLeaf2} alt="a monstera leaf" width="250" />
+  <img id="monstera3b" class="monstera-leaf" src={MonsteraLeaf3} alt="a monstera leaf" width="220" />
+</div>
+<!-- right -->
+<div class="monstera-group monstera-group-right">
+  <img id="monstera1b" class="monstera-leaf" src={MonsteraLeaf1} alt="a monstera leaf" width="220" />
+  <img id="monstera2a" class="monstera-leaf" src={MonsteraLeaf2} alt="a monstera leaf" width="230" />
+  <img id="monstera3a" class="monstera-leaf" src={MonsteraLeaf3} alt="a monstera leaf" width="350" />
+</div>
 
 <main style="position: relative">
   <div id="hero">
@@ -660,57 +763,65 @@
     <img id="hero-bottom-wave" src={Wave1} alt="aesthetic wave background" />
     <nav id="main-nav">
       <img id="nav-bg" src={NavBg} alt="nav background" style="opacity: {scrollPosition < 160 ? scrollPosition / 150 : .92};">
-      <div id="nav-wrapper" class="centered-content">
-        <div id="logo">
-          <a href="/">T.S.</a>
+      <div style="width: 100vw; height: 100%;">
+        <div id="nav-wrapper" class="centered-content">
+          <div id="logo">
+            <a href="/">T.S.</a>
+          </div>
+          <ul id="links">
+            <li><a href="#backstory"><span>01.</span> <span>Backstory</span></a></li>
+            <li><a href="#expertise"><span>02.</span> <span>Expertise</span></a></li>
+            <li><a href="#showcase"><span>03.</span> <span>Showcase</span></a></li>
+            <li><a href="#contact"><span>04.</span> <span>Contact</span></a></li>
+            <li><a href="/resume" class="button-styles">Résumé</a></li>
+          </ul>
         </div>
-        <ul id="links">
-          <li><a href="#backstory"><span>01.</span> <span>Backstory</span></a></li>
-          <li><a href="#expertise"><span>02.</span> <span>Expertise</span></a></li>
-          <li><a href="#showcase"><span>03.</span> <span>Showcase</span></a></li>
-          <li><a href="#contact"><span>04.</span> <span>Contact</span></a></li>
-          <li><a href="/resume" class="button-styles">Résumé</a></li>
-        </ul>
       </div>
     </nav>
     <div id="intro-container" class="centered-content">
       <div id="intro-title" class="centered-content">
         <span>Hi there, I'm</span>
         <p id="name">
-          Taylor Sturtz
+          Taylor
+          Sturtz
         </p>
         <span>I love what I do.</span>
       </div>
       <div id="intro-body">
         <div id="pfp" />
-        <code id="details" class="crt">
+        <div id="details" class="crt">
           <p>
-            I'm a self-motivated full-stack software engineer--that knows how to exit Vim--with an affinity for front-end and good vibes 🤙. Currently, I'm developing commerce system tools and services at <a href="https://www.blizzard.com">Blizzard Entertainment</a>.
+            I'm a self-motivated full-stack software engineer that knows how to exit Vim and has an affinity for design and good vibes 🤙. Currently, I'm developing commerce system tools and services at <a href="https://www.blizzard.com">Blizzard Entertainment</a>.
           </p>
-          <br />
-          <p>Check me out on social and run me in the terminal:</p>
-          <div id="intro-social">
-            <a href="/twitter">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-            </a>
-            <a href="/github">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            </a>
-            <a href="/linkedin">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            </a>
+          <div id="details-social">
+            <br />
+            <p>Check me out on social and run me in the terminal:</p>
+            <div id="intro-social">
+              <a href="/twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+              </a>
+              <a href="/github">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+              <a href="/linkedin">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+            <div id="intro-npx" title="run me in the terminal (with node installed)">
+              <span>></span>
+              &nbsp;
+              <span>npx taylorsturtz</span><span class="cursor-blink">_</span>
+              &nbsp;&nbsp;&nbsp;
+              <CopyToClipboard text="npx taylorsturtz" />
+            </div>
           </div>
-          <div id="intro-npx" title="run me in the terminal (with node installed)">
-            <span>></span>
-            &nbsp;
-            <span>npx taylorsturtz</span><span class="cursor-blink">_</span>
-            &nbsp;&nbsp;&nbsp;
-            <CopyToClipboard text="npx taylorsturtz" />
-          </div>
-        </code>
+        </div>
       </div>
     </div>
-    <a href="#backstory">
+    <div id="mobile-banner">
+      <a href="/resume" class="button-styles">Résumé</a>
+    </div>
+    <a id="backstory-link" href="#backstory">
       <svg id="chevrons-down" transition:fade xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-down"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
     </a>
   </div>
@@ -719,20 +830,22 @@
     <div id="backstory" />
     <img id="backstory-top-waves" src={WavesStacked_GY} alt="waves stack green to yellow">
     <div id="backstory-content" class="centered-content">
-      <p class="section-number">01.</p>
-      <h2 class="section-title">Backstory</h2>
-      <h3 class="section-subtitle">A bit about me</h3>
-      <span style="color: #2c4170;"><Columbus /></span>
-      <span style="color: #6e1717"><Irvine /></span>
-      <span style="color: #a53030;"><Canada /></span>
+      <div class="content-title">
+        <p class="section-number">01.</p>
+        <h2 class="section-title">Backstory</h2>
+        <h3 class="section-subtitle">A bit about me</h3>
+      </div>
+      <!-- <span style="color: #2c4170;"><Columbus /></span> -->
+      <span style="color: #b65800"><Irvine /></span>
+      <!-- <span style="color: #a53030;"><Canada /></span>
       <span style="color: #444f5f;"><Caribbean /></span>
-      <span style="color: #594129;"><Nyc /></span>
+      <span style="color: #594129;"><Nyc /></span> -->
       <div id="backstory-text">
-        <p>Hello! I'm a senior software engineer from Irvine, CA.</p>
-        <span style="color: #6e1717;"><Europe /></span>
-        <span style="color: #244e2b;"><Mexico /></span>
-        <p>My interest in tech started long ago: programming calculators, designing game mods, and developing static websites. I started off my career in design, transitioned to engineering, and I've now had years of experience working in collaborative agile environments across multiple industries. Along the way I've excelled in front-end web and have grown into back-end development. I enjoy what I do, I make work fun, and I empower my teammates to be successful.</p>
-        <p>I am <a href="https://www.psychologytoday.com/us/blog/building-the-habit-hero/202008/two-types-passion-harmonious-vs-obsessive#:~:text=Harmonious%20passion%20is%20linked%20to%20%E2%80%9Cflow%20state%E2%80%9D" target="_blank" rel="noreferrer">harmoniously passionate</a> about family, soccer, and software. I also enjoy board games, pixel art, hiking, plants, and tea.</p>
+        <p>Hello! I'm a senior software engineer living in Irvine, CA.</p>
+        <!-- <span style="color: #6e1717;"><Europe /></span>
+        <span style="color: #244e2b;"><Mexico /></span> -->
+        <p>Early on I found myself drawn to tech; always designing and programming game mods, bots, graphing calculators, websites, etc. After college I worked as a designer for 5 years before transitioning to engineering. I've now experienced many years working in front-end and full-stack roles and collaborative agile environments across multiple industries. I enjoy what I do, I make work fun, and I empower my teammates to be successful.</p>
+        <p>I'm also a big fan of my family, soccer, tea, board games, isometric art, hiking, and gardening.</p>
         <!-- <h5 class="section-subheading">Early days</h5>
         <BootOnBall />
         <p>When I was twelve my dad noticed my interest in the web and dropped a stack of HTML books on my desk. He told me to get to it and the rest is history; let me tell you a bit about that history...</p>
@@ -751,14 +864,15 @@
   <div id="experience-container" class="section-container">
     <div id="experience" />
     <div id="experience-content" class="centered-content">
-      <p class="section-number" style="right: 0;" title="Expertise">02.</p>
-      <h2 class="section-title" style="text-align: right; color: var(--grey);">Expertise</h2>
-      <h3 class="section-subtitle" style="text-align: right; color: var(--accent1-dim);">My experience in tech</h3>
-      <div style="display: flex; gap: 3%;">
-
-        <div style="width: 62%;">
+      <div class="content-title">
+        <p class="section-number" style="right: 0;" title="Expertise">02.</p>
+        <h2 class="section-title" style="text-align: right; color: var(--grey);">Expertise</h2>
+        <h3 class="section-subtitle" style="text-align: right; color: var(--accent1-dim);">Experience in tech</h3>
+      </div>
+      <div id="experience-content-wrapper">
+        <div id="work-history">
           <h4 class="section-heading">Work History</h4>
-          <p style="font-size: .9rem; margin-bottom: 20px; color: #ffffff66">Some information about each of the companies I've worked for and my role on the team. See my <a href="/resume">résumé</a> for a concise and printable version.</p>
+          <p class="section-blurb">Some information about each of the companies I've worked for and my role on the team. See my <a href="/resume">résumé</a> for a concise and printable version.</p>
           <div style="display: flex; width: 100%;">
             <VerticalDivider text="Time" />
             <div style="width: 100%;">
@@ -909,10 +1023,9 @@
           </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; margin: 0 auto; width: 35%;">
-          <!-- <div id="typewriter" /> -->
+        <div id="skill-set">
           <h4 class="section-heading">Skill Set</h4>
-          <p style="font-size: .9rem; margin-bottom: 20px; color: #ffffff66">From plotting vectors to querying databases and everything in between, I am constantly learning and developing.</p>
+          <p class="section-blurb">Here's a bunch of technology I have a little or a ton of experience with. I am constantly learning and growing.</p>
           <div style="display: flex;">
             <VerticalDivider text="Stack" />
             <table style="white-space: nowrap;">
@@ -1071,9 +1184,11 @@
       <img id="contact-top-wave" src={Wave4} alt="aesthetic wave background" />
       <div id="contact" />
       <div id="contact-content" class="centered-content">
-        <p class="section-number" style="right: 0;">04.</p>
-        <h2 class="section-title" style="text-align: right;">Contact</h2>
-        <h3 class="section-subtitle" style="text-align: right;">Send me a note</h3>
+        <div class="content-title">
+          <p class="section-number" style="right: 0;">04.</p>
+          <h2 class="section-title" style="text-align: right;">Contact</h2>
+          <h3 class="section-subtitle" style="text-align: right;">Send me a note</h3>
+        </div>
         <div id="contact-text">
           <div id="contact-plane-wrapper">
             <PaperPlane />
@@ -1102,7 +1217,7 @@
               <br />
               <p>This site was designed and developed</p>
               <p>by me with a dose of inspiration from</p>
-              <p><a href="https://brittanychiang.com">Brittany Chiang</a>'s (thanks!).</p>
+              <p><a href="https://brittanychiang.com">Brittany Chiang</a>'s sites (thanks!).</p>
             </div>
           </div>
         </div>

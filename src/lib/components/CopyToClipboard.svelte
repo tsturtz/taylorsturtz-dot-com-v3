@@ -21,7 +21,7 @@
     &:hover {
       color: var(--accent1-dim);
     }
-    filter: drop-shadow(rgba(255, 215, 77, 0.6) -1px -1px 2px) drop-shadow(rgba(124, 127, 255, 0.6) 1px 1px 2px);
+    filter: drop-shadow(rgba(255, 215, 77, 0.3) -1px -1px 2px) drop-shadow(rgba(124, 127, 255, 0.3) 1px 1px 2px);
   }
   #check {
     color: green;

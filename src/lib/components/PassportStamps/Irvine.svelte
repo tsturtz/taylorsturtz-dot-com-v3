@@ -2,14 +2,11 @@
 
 <style>
   svg {
-    opacity: 0.7;
-    transform: rotate(10deg);
-    shape-outside: url($lib/images/irvine.svg);
-    shape-image-threshold: 0.5;
-    shape-margin: 20px;
+    opacity: 0.5;
     position: absolute;
-    top: 10px;
-    right: 320px;
+    top: 50px;
+    right: 80px;
+    transform: rotate(-5deg) scale(2);
   }
 </style>
 

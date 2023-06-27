@@ -1,0 +1,24 @@
+@import 'mixins', 'variables';
+
+.monstera-group {
+	@include xxl {
+		display: none;
+	}
+}
+
+.centered-content {
+	width: 55vw;
+	margin: 0 auto;
+	@include xxl {
+		width: 70vw;
+	}
+	@include xl {
+		width: 90vw;
+	}
+}
+
+.content-title {
+	@include md {
+		display: none;
+	}
+}
