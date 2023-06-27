@@ -208,8 +208,12 @@
     /* background: linear-gradient(90deg, #ffffff01, #ffffff0a, #ffffff01); */
   }
   #mobile-banner {
+    display: none;
     text-align: center;
     margin-top: 70px;
+    @include md {
+      display: block;
+    }
   }
 
   #intro-title {
