@@ -757,7 +757,7 @@
 <div class="monstera-group monstera-group-right">
   <img id="monstera1b" class="monstera-leaf" src={MonsteraLeaf1} alt="a monstera leaf" width="220" />
   <img id="monstera2a" class="monstera-leaf" src={MonsteraLeaf2} alt="a monstera leaf" width="230" />
-  <img id="monstera3a" class="monstera-leaf" src={MonsteraLeaf3} alt="a monstera leaf" width="350" />
+  <img id="monstera3a" class="monstera-leaf" src={MonsteraLeaf3} alt="a monstera leaf" width="380" />
 </div>
 
 <main style="position: relative">
