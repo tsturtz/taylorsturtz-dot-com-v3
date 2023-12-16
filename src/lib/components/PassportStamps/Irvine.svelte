@@ -6,7 +6,7 @@
     position: absolute;
     top: 50px;
     right: 80px;
-    transform: rotate(-5deg) scale(2);
+    transform: rotate(-5deg) scale(2.5);
   }
 </style>
 

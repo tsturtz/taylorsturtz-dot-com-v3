@@ -5,6 +5,21 @@
   import tsV3_img from '$lib/images/demos/jungle-bg-sm.jpg';
   import realValue_img from '$lib/images/demos/realvalue.jpg';
   import realValue_img_anim from '$lib/images/demos/realvalue.gif';
+  import meetupMap_img from '$lib/images/demos/meetupmap.jpg';
+  import meetupMap_img_anim from '$lib/images/demos/meetupmap.gif';
+  import toejamAndEarl_img from '$lib/images/demos/toejam-and-earl-jam-out.jpg';
+  import toejamAndEarl_img_anim from '$lib/images/demos/toejam-and-earl-jam-out.gif';
+  import todoForYou_img from '$lib/images/demos/todoforyou.jpg';
+  import todoForYou_img_anim from '$lib/images/demos/todoforyou.gif';
+  import yourTeamSoccerMatches_img from '$lib/images/demos/your-team-soccer-matches.jpeg';
+  import zoombot_img from '$lib/images/demos/zoombot.jpg';
+  import iWantMyBbTv_img from '$lib/images/demos/i-want-my-bbtv.jpg';
+  import iWantMyBbTv_img_anim from '$lib/images/demos/i-want-my-bbtv.gif';
+  import wc2026TixScaper_img from '$lib/images/demos/wc2026-tix-scraper.jpg';
+  import soccer6Slackbot_img from '$lib/images/demos/soccer6slackbot.png';
+  import semanticUiReactCountries_img from '$lib/images/demos/semantic-ui-react-countries.jpg';
+  import semanticUiReactCountries_img_anim from '$lib/images/demos/semantic-ui-react-countries.gif';
+  import homeDash_img from '$lib/images/demos/home-dash.jpg';
   // util
   import Button from '../Button.svelte';
   // app
@@ -100,8 +115,8 @@
   const meetupMap: Project = {
     type: ProjectType.WEB,
     title: 'meetup_map',
-    metaImage: 'src/lib/images/demos/meetupmap.jpg',
-    metaImageAnimated: 'src/lib/images/demos/meetupmap.gif',
+    metaImage: meetupMap_img,
+    metaImageAnimated: meetupMap_img_anim,
     externalLink: 'https://meetupmap.taylorsturtz.com',
     githubLink: 'https://github.com/Xevnik/meetup_map',
     stack: ['jQuery', 'PHP'],
@@ -110,8 +125,8 @@
   const toejamAndEarlJamOut: Project = {
     type: ProjectType.WEB,
     title: 'toejam-and-earl-jam-out',
-    metaImage: 'src/lib/images/demos/toejam-and-earl-jam-out.jpg',
-    metaImageAnimated: 'src/lib/images/demos/toejam-and-earl-jam-out.gif',
+    metaImage: toejamAndEarl_img,
+    metaImageAnimated: toejamAndEarl_img_anim,
     externalLink: 'https://toejamandearl.taylorsturtz.com',
     githubLink: 'https://github.com/tsturtz/toejam-and-earl-jam-out',
     stack: ['React', 'SVG Sprites'],
@@ -120,8 +135,8 @@
   const todoForYou: Project = {
     type: ProjectType.WEB,
     title: 'todo-for-you',
-    metaImage: 'src/lib/images/demos/todoforyou.jpg',
-    metaImageAnimated: 'src/lib/images/demos/todoforyou.gif',
+    metaImage: todoForYou_img,
+    metaImageAnimated: todoForYou_img_anim,
     externalLink: 'https://tsturtz.github.io/todo-for-you/',
     githubLink: 'https://github.com/tsturtz/todo-for-you',
     stack: ['Angular.js', 'Firebase'],
@@ -131,7 +146,7 @@
   const youtTeamSoccerMatches: Project = {
     type: ProjectType.MACOS,
     title: 'your-team-soccer-matches',
-    metaImage: 'src/lib/images/demos/your-team-soccer-matches.jpeg',
+    metaImage: yourTeamSoccerMatches_img,
     externalLink: 'https://xbarapp.com/docs/plugins/Sports/your-team-soccer-matches.10m.js.html',
     githubLink: 'https://github.com/tsturtz/your-team-soccer-matches',
     stack: ['Node.js', 'Shell'],
@@ -141,7 +156,7 @@
   const zoombot: Project = {
     type: ProjectType.IOT,
     title: 'zoombot',
-    metaImage: 'src/lib/images/demos/zoombot.jpg',
+    metaImage: zoombot_img,
     metaImageAnimated: '',
     imagesLink: 'http://localhost:5173/src/lib/video/zoombot-short-clip.mp4',
     stack: ['C++ (Arduino)'],
@@ -152,8 +167,8 @@
   const iWantMyBbtv: Project = {
     type: ProjectType.MOBILE,
     title: 'i-want-my-bbtv',
-    metaImage: 'src/lib/images/demos/i-want-my-bbtv.jpg',
-    metaImageAnimated: 'src/lib/images/demos/i-want-my-bbtv.gif',
+    metaImage: iWantMyBbTv_img,
+    metaImageAnimated: iWantMyBbTv_img_anim,
     githubLink: 'https://github.com/tsturtz/i-want-my-bbtv',
     stack: ['React Native', 'Node.js', 'MongoDB'],
     description: `A cross-platform mobile app for my wife (and sometimes me) 🙃: randomly choose which of our favorite TV shows or movies to rewatch.`,
@@ -162,7 +177,7 @@
   const wc2026TixScraper: Project = {
     type: ProjectType.BOT,
     title: 'wc2026-tix-scraper',
-    metaImage: 'src/lib/images/demos/wc2026-tix-scraper.jpg',
+    metaImage: wc2026TixScaper_img,
     githubLink: 'https://github.com/tsturtz/wc2026-tix-scraper',
     stack: ['Node.js', 'Playwright', 'Shell'],
     description: `Checks the world cup 2026 website every hour for changes and vigorously alerts me via slack if tickets have become available.`,
@@ -170,7 +185,7 @@
   const soccer6Slackbot: Project = {
     type: ProjectType.BOT,
     title: 'soccer6-slackbot',
-    metaImage: 'src/lib/images/demos/soccer6slackbot.png',
+    metaImage: soccer6Slackbot_img,
     githubLink: 'https://github.com/tsturtz/soccer6-slackbot',
     stack: ['Go', 'GoQuery'],
     description: `An interactive slack bot to retrieve information about Soccer6's game schedules and scores. Periodic scheduled reminders sent to my soccer team's slack channel with up-to-date information.`,
@@ -179,8 +194,8 @@
   const semanticUiReactCountries: Project = {
     type: ProjectType.CLI,
     title: 'semantic-ui-react-countries',
-    metaImage: 'src/lib/images/demos/semantic-ui-react-countries.jpg',
-    metaImageAnimated: 'src/lib/images/demos/semantic-ui-react-countries.gif',
+    metaImage: semanticUiReactCountries_img,
+    metaImageAnimated: semanticUiReactCountries_img_anim,
     externalLink: 'https://www.npmjs.com/package/semantic-ui-react-countries',
     githubLink: 'https://github.com/tsturtz/semantic-ui-react-countries',
     stack: ['Node.js'],
@@ -189,7 +204,7 @@
   const homeDash: Project = {
     type: ProjectType.CLI,
     title: 'home-dash',
-    metaImage: 'src/lib/images/demos/home-dash.jpg',
+    metaImage: homeDash_img,
     githubLink: 'https://github.com/tsturtz/my-shell-scripts/tree/master/openhome',
     stack: ['Web/APIs', 'Powershell'],
     description: `Automated custom home display system. Displays family photos, news/stocks, weather, streams/feeds, and useful Google Sheets populated data. Scripts to run it all on windows/chrome (launch, interaction detection, etc.).`,
@@ -225,6 +240,10 @@
 </script>
 
 <style lang="scss">
+  #showcase {
+    position: absolute;
+    top: -150px;
+  }
   #showcase-content {
     position: relative;
     top: 130px;
@@ -271,6 +290,7 @@
   }
 </style>
 
+<div id="showcase" />
 <div id="showcase-content" class="centered-content">
   <div class="content-title">
     <p class="section-number">03.</p>

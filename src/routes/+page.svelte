@@ -38,6 +38,7 @@
   import LaravelIcon from '$lib/components/Icons/devicons/LaravelIcon.svelte';
   import MongoIcon from '$lib/components/Icons/devicons/MongoIcon.svelte';
   import MySqlIcon from '$lib/components/Icons/devicons/MySqlIcon.svelte';
+  import NextIcon from '$lib/components/Icons/devicons/NextIcon.svelte';
   import NginxIcon from '$lib/components/Icons/devicons/NginxIcon.svelte';
   import NodeIcon from '$lib/components/Icons/devicons/NodeIcon.svelte';
   import OracleIcon from '$lib/components/Icons/devicons/OracleIcon.svelte';
@@ -82,6 +83,7 @@
   // Svelte imports
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
+	import TailwindIcon from '$lib/components/Icons/devicons/TailwindIcon.svelte';
 
   let mounted = false;
   let scrollPosition = 0;
@@ -312,6 +314,10 @@
     display: flex;
     align-items: center;
     width: max-content;
+    background-color: rgb(0, 0, 15);
+    border: 1px solid #717171;
+    border-radius: 10px;
+    box-shadow: 0px 1px 24px 4px rgba(0,0,0,0.75);
   }
 
   #backstory-link {
@@ -353,7 +359,7 @@
   }
   #backstory {
     position: absolute;
-    top: -50px;
+    top: 0px;
   }
   #backstory-top-wave {
     position: relative;
@@ -413,9 +419,9 @@
     background-color: var(--primary);
     margin-bottom: 100px;
   }
-  #experience {
+  #expertise {
     position: absolute;
-    top: 0;
+    top: -300px;
   }
   #experience-content {
     position: relative;
@@ -522,6 +528,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0px 20px;
       @include md {
         flex-direction: column-reverse;
         gap: 40px;
@@ -536,8 +543,9 @@
       }
       #footer-pfp {
         position: relative;
-        width: 160px;
-        height: 130px;
+        width: 140px;
+        min-width: 130px;
+        height: 110px;
         margin: 0 20px;
         background-image: url('$lib/images/pfp.png');
         background-position: center;
@@ -548,13 +556,11 @@
         -webkit-mask-repeat: no-repeat;
         mask-repeat: no-repeat;
         filter: grayscale(1) brightness(0.9) contrast(1.3);
+        @include md {
+          display: none;
+        }
       }
       #footer-info {
-        #footer-name {
-          font-family: 'TheSeasons';
-          font-size: 2rem;
-          margin-bottom: 5px;
-        }
         #footer-details {
           font-size: .8rem;
           color: var(--grey);
@@ -683,65 +689,6 @@
       stroke-width: 0;
     }
   }
-
-  // --------------- CRT EFFECT
-
-  .crt {
-    //
-  }
-
-  .crt::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    background-size: 100% 2px, 3px 100%;
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  .crt::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(18, 16, 16, 0.1);
-    opacity: 0;
-    pointer-events: none;
-    animation: flicker 0.15s infinite;
-    z-index: 2;
-  }
-
-  @keyframes flicker {
-    0% { opacity: 0.27861; }
-    5% { opacity: 0.34769; }
-    10% { opacity: 0.23604; }
-    15% { opacity: 0.90626; }
-    20% { opacity: 0.18128; }
-    25% { opacity: 0.83891; }
-    30% { opacity: 0.65583; }
-    35% { opacity: 0.67807; }
-    40% { opacity: 0.26559; }
-    45% { opacity: 0.84693; }
-    50% { opacity: 0.96019; }
-    55% { opacity: 0.08594; }
-    60% { opacity: 0.20313; }
-    65% { opacity: 0.71988; }
-    70% { opacity: 0.53455; }
-    75% { opacity: 0.37288; }
-    80% { opacity: 0.71428; }
-    85% { opacity: 0.70419; }
-    90% { opacity: 0.7003; }
-    95% { opacity: 0.36108; }
-    100% { opacity: 0.24387; }
-  }
 </style>
 
 <svelte:window bind:scrollY={scrollPosition}/>
@@ -793,7 +740,7 @@
       </div>
       <div id="intro-body">
         <div id="pfp" />
-        <div id="details" class="crt">
+        <div id="details">
           <p>
             I'm a self-motivated full-stack software engineer that knows how to exit Vim and has an affinity for design and good vibes 🤙. Currently, I'm developing commerce system tools and services at <a href="https://www.blizzard.com">Blizzard Entertainment</a>.
           </p>
@@ -811,13 +758,13 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
             </div>
-            <div id="intro-npx" title="run me in the terminal (with node installed)">
+            <code id="intro-npx" title="run me in the terminal (with node installed)">
               <span>></span>
               &nbsp;
               <span>npx taylorsturtz</span><span class="cursor-blink">_</span>
               &nbsp;&nbsp;&nbsp;
               <CopyToClipboard text="npx taylorsturtz" />
-            </div>
+            </code>
           </div>
         </div>
       </div>
@@ -837,7 +784,7 @@
       <div class="content-title">
         <p class="section-number">01.</p>
         <h2 class="section-title">Backstory</h2>
-        <h3 class="section-subtitle">A bit about me</h3>
+        <h3 class="section-subtitle">A Bit About Me</h3>
       </div>
       <!-- <span style="color: #2c4170;"><Columbus /></span> -->
       <span style="color: #b65800"><Irvine /></span>
@@ -848,8 +795,8 @@
         <p>Hello! I'm a senior software engineer living in Irvine, CA.</p>
         <!-- <span style="color: #6e1717;"><Europe /></span>
         <span style="color: #244e2b;"><Mexico /></span> -->
-        <p>Early on I found myself drawn to tech; always designing and programming game mods, bots, graphing calculators, websites, etc. After college I worked as a designer for 5 years before transitioning to engineering. I've now experienced many years working in front-end and full-stack roles and collaborative agile environments across multiple industries. I enjoy what I do, I make work fun, and I empower my teammates to be successful.</p>
-        <p>I'm also a big fan of my family, soccer, tea, board games, isometric art, hiking, and gardening.</p>
+        <p>Early on I found myself drawn to tech; always designing and programming websites, game mods, bots, graphing calculators, etc. After college I worked as a designer for 5 years before transitioning to engineering. I've now experienced many years working in front-end and full-stack roles and collaborative agile environments across multiple industries. I enjoy what I do, I make work fun, and I empower my teammates to be successful.</p>
+        <p>I'm also a big fan of my family, soccer, tea, board games, isometric art, hiking, and plants.</p>
         <!-- <h5 class="section-subheading">Early days</h5>
         <BootOnBall />
         <p>When I was twelve my dad noticed my interest in the web and dropped a stack of HTML books on my desk. He told me to get to it and the rest is history; let me tell you a bit about that history...</p>
@@ -866,12 +813,12 @@
   <img id="backstory-bottom-waves" src={WavesStacked_YG} alt="waves stack green to yellow">
 
   <div id="experience-container" class="section-container">
-    <div id="experience" />
+    <div id="expertise" />
     <div id="experience-content" class="centered-content">
       <div class="content-title">
         <p class="section-number" style="right: 0;" title="Expertise">02.</p>
         <h2 class="section-title" style="text-align: right; color: var(--grey);">Expertise</h2>
-        <h3 class="section-subtitle" style="text-align: right; color: var(--accent1-dim);">Experience in tech</h3>
+        <h3 class="section-subtitle" style="text-align: right; color: var(--accent1-dim);">Experience in Tech</h3>
       </div>
       <div id="experience-content-wrapper">
         <div id="work-history">
@@ -1044,7 +991,7 @@
               </tr>
               <tr>
                 <td rowspan="3" style="font-size: .9rem;">Design</td>
-                <td style="color: white; display: flex; align-items: center;"><PhotoshopIcon --size="16px" />&nbsp;Adobe Suite</td>
+                <td style="color: white; display: flex; align-items: center;"><PhotoshopIcon --size="16px" />&nbsp;Adobe CC</td>
               </tr>
               <tr>
                 <td style="color: white; display: flex; align-items: center;"><BalsamiqIcon --size="16px" />&nbsp;Balsamiq</td>
@@ -1054,7 +1001,7 @@
               </tr>
               <TableRowDashedDivider />
               <tr>
-                <td rowspan="13" style="font-size: .9rem;">Client</td>
+                <td rowspan="14" style="font-size: .9rem;">Client</td>
                 <td style="color: white; display: flex; align-items: center;"><AngularIcon --size="16px" />&nbsp;AngularJS</td>
               </tr>
               <tr>
@@ -1088,6 +1035,9 @@
                 <td style="color: white; display: flex; align-items: center;"><SvelteIcon --size="16px" />&nbsp;Svelte</td>
               </tr>
               <tr>
+                <td style="color: white; display: flex; align-items: center;"><TailwindIcon --size="16px" />&nbsp;Tailwind</td>
+              </tr>
+              <tr>
                 <td style="color: white; display: flex; align-items: center;"><TypeScriptIcon --size="16px" />&nbsp;TypeScript</td>
               </tr>
               <tr>
@@ -1095,11 +1045,14 @@
               </tr>
               <TableRowDashedDivider />
               <tr>
-                <td rowspan="8" style="font-size: .9rem;">Server</td>
+                <td rowspan="9" style="font-size: .9rem;">Server</td>
                 <td style="color: white; display: flex; align-items: center;"><ArduinoIcon --size="16px" />&nbsp;Arduino (C++)</td>
               </tr>
               <tr>
                 <td style="color: white; display: flex; align-items: center;"><ExpressIcon --size="16px" />&nbsp;Express</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><NextIcon --size="16px" />&nbsp;Next</td>
               </tr>
               <tr>
                 <td style="color: white; display: flex; align-items: center;"><GoIcon --size="16px" />&nbsp;Go</td>
@@ -1146,21 +1099,21 @@
               </tr>
               <TableRowDashedDivider />
               <tr>
-                <td rowspan="8" style="font-size: .9rem;">Infrastructure</td>
+                <td rowspan="8" style="font-size: .9rem;">Infra.</td>
                 <td style="color: white; display: flex; align-items: center;"><AwsIcon --size="16px" />&nbsp;AWS</td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td style="color: white; display: flex; align-items: center;"><AzureIcon --size="16px" />&nbsp;Azure</td>
-              </tr>
+              </tr> -->
               <tr>
                 <td style="color: white; display: flex; align-items: center;"><DockerIcon --size="16px" />&nbsp;Docker</td>
               </tr>
               <tr>
                 <td style="color: white; display: flex; align-items: center;"><GitIcon --size="16px" />&nbsp;Git</td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td style="color: white; display: flex; align-items: center;"><GcpIcon --size="16px" />&nbsp;Google Cloud</td>
-              </tr>
+              </tr> -->
               <tr>
                 <td style="color: white; display: flex; align-items: center;"><JenkinsIcon --size="16px" />&nbsp;Jenkins</td>
               </tr>
@@ -1191,7 +1144,7 @@
         <div class="content-title">
           <p class="section-number" style="right: 0;">04.</p>
           <h2 class="section-title" style="text-align: right;">Contact</h2>
-          <h3 class="section-subtitle" style="text-align: right;">Send me a note</h3>
+          <h3 class="section-subtitle" style="text-align: right;">Send Me a Note</h3>
         </div>
         <div id="contact-text">
           <div id="contact-plane-wrapper">
@@ -1213,15 +1166,10 @@
         <div id="footer-wrapper">
           <div id="footer-pfp" />
           <div id="footer-info">
-            <p id="footer-name">
-              Taylor Sturtz
-            </p>
             <div id="footer-details">
               <p><em>Thanks for stopping by!</em></p>
               <br />
-              <p>This site was designed and developed</p>
-              <p>by me with a dose of inspiration from</p>
-              <p><a href="https://brittanychiang.com">Brittany Chiang</a>'s sites (thanks!).</p>
+              <p>This site was designed and developed (using Svelte, Sass, and Vite) by me with a bit of inspiration from <a href="https://brittanychiang.com">Brittany Chiang</a>'s beautiful portfolio sites (thank you!).</p>
             </div>
           </div>
         </div>
