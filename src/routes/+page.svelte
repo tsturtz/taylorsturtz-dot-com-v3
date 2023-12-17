@@ -724,7 +724,7 @@
             <li><a href="#expertise"><span>02.</span> <span>Expertise</span></a></li>
             <li><a href="#showcase"><span>03.</span> <span>Showcase</span></a></li>
             <li><a href="#contact"><span>04.</span> <span>Contact</span></a></li>
-            <li><a href="https://v2.taylorsturtz.com/resume/" target="_blank" rel="noreferrer" class="button-styles">Résumé</a></li>
+            <li><a href="/resume" target="_blank" rel="noreferrer" class="button-styles">Résumé</a></li>
           </ul>
         </div>
       </div>
@@ -770,7 +770,7 @@
       </div>
     </div>
     <div id="mobile-banner">
-      <a href="https://v2.taylorsturtz.com/resume/" target="_blank" rel="noreferrer" class="button-styles">Résumé</a>
+      <a href="/resume" target="_blank" rel="noreferrer" class="button-styles">Résumé</a>
     </div>
     <a id="backstory-link" href="#backstory">
       <svg id="chevrons-down" transition:fade xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-down"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
@@ -823,7 +823,7 @@
       <div id="experience-content-wrapper">
         <div id="work-history">
           <h4 class="section-heading">Work History</h4>
-          <p class="section-blurb">Some information about each of the companies I've worked for and my role on the team. See my <a href="https://v2.taylorsturtz.com/resume/" target="_blank" rel="noreferrer">résumé</a> for a concise and printable version.</p>
+          <p class="section-blurb">Some information about each of the companies I've worked for and my role on the team. See my <a href="/resume" target="_blank" rel="noreferrer">résumé</a> for a concise and printable version.</p>
           <div style="display: flex; width: 100%;">
             <VerticalDivider text="Time" />
             <div style="width: 100%;">
