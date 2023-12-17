@@ -1052,9 +1052,6 @@
                 <td style="color: white; display: flex; align-items: center;"><ExpressIcon --size="16px" />&nbsp;Express</td>
               </tr>
               <tr>
-                <td style="color: white; display: flex; align-items: center;"><NextIcon --size="16px" />&nbsp;Next</td>
-              </tr>
-              <tr>
                 <td style="color: white; display: flex; align-items: center;"><GoIcon --size="16px" />&nbsp;Go</td>
               </tr>
               <tr>
@@ -1062,6 +1059,9 @@
               </tr>
               <tr>
                 <td style="color: white; display: flex; align-items: center;"><LaravelIcon --size="16px" />&nbsp;Laravel</td>
+              </tr>
+              <tr>
+                <td style="color: white; display: flex; align-items: center;"><NextIcon --size="16px" />&nbsp;Next</td>
               </tr>
               <tr>
                 <td style="color: white; display: flex; align-items: center;"><NodeIcon --size="16px" />&nbsp;Node</td>
