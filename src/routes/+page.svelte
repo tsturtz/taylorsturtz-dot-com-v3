@@ -1,5 +1,5 @@
 <script lang="ts">
-  // Images
+  // Monstera Leaves
   import MonsteraLeaf1 from '$lib/images/monstera-leaf-1.png';
   import MonsteraLeaf2 from '$lib/images/monstera-leaf-2.png';
   import MonsteraLeaf3 from '$lib/images/monstera-leaf-3.png';
@@ -64,12 +64,15 @@
   import Caribbean from '$lib/components/PassportStamps/Caribbean.svelte';
   import Europe from '$lib/components/PassportStamps/Europe.svelte';
 
-  // Other vectors
+  // Other image imports n stuff
   import BootOnBall from '$lib/components/BootOnBall.svelte';
   import Ramen from '$lib/components/Ramen.svelte';
   import Tea from '$lib/components/Tea.svelte';
   import Bicycle from '$lib/components/Bicycle.svelte';
   import PaperPlane from '$lib/components/PaperPlane.svelte';
+  import YtelInboxDemo from '$lib/images/inbox.gif';
+  import YtelWorkflowDemo from '$lib/images/workflow.png';
+  import ZoombotDemo from '$lib/video/zoombot-short-clip.mp4';
 
   // App
   import Showcase from '$lib/components/App/Showcase.svelte';
@@ -852,7 +855,7 @@
                   <div>
                     <p>The work I do on the Blizzard commerce platform powers monetization across ABK game studios and critically impacts hundreds of millions of end users. My team proudly provides tools to manage commerce data and APIs to access that data, which are used by game clients, web shops, and more.</p>
                     <br />
-                    <p>Additionally, I contribute to internal design systems, post to the engineering blog, formally mentor junior engineers, and helped build <a href="src/lib/video/zoombot-short-clip.mp4" target="_blank" rel="noreferrer">Zoombot&trade;</a> which got second place in the <em>Battle.net Hackathon, 2022</em>!</p>
+                    <p>Additionally, I contribute to internal design systems, post to the engineering blog, formally mentor junior engineers, and helped build <a href={ZoombotDemo} target="_blank" rel="noreferrer">Zoombot&trade;</a> which got second place in the <em>Battle.net Hackathon, 2022</em>!</p>
                   </div>
                 </details>
               </div>
@@ -910,7 +913,7 @@
                   <div>
                     <p>Ytel offers a variety of telecommunications software solutions ranging from call center systems, to APIs (think Twilio), to automated SMS campaigns with reactive event handling (decision tree).</p>
                     <br />
-                    <p>I started at Ytel as a web developer building marketing sites and internal apps while maintaining their respective DNS and virtual machines. In about three months I was promoted to work on Ytel's suite of software products. I led development on Ytel's modern and legacy applications and then built new tools including real-time <a href="src/lib/images/inbox.gif" target="_blank" rel="noreferrer">live messaging inbox system</a> and a complex drag and drop <a href="src/lib/images/workflow.png" target="_blank" rel="noreferrer">workflow editor</a>.</p>
+                    <p>I started at Ytel as a web developer building marketing sites and internal apps while maintaining their respective DNS and virtual machines. In about three months I was promoted to work on Ytel's suite of software products. I led development on Ytel's modern and legacy applications and then built new tools including real-time <a href={YtelInboxDemo} target="_blank" rel="noreferrer">live messaging inbox system</a> and a complex drag and drop <a href={YtelWorkflowDemo} target="_blank" rel="noreferrer">workflow editor</a>.</p>
                   </div>
                 </details>
               </div>
