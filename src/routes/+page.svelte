@@ -399,7 +399,7 @@
 												target="_blank"
 												rel="noreferrer">Zoombot&trade;</a
 											>
-											which got second place in the <em>Battle.net Hackathon, 2022</em>!
+											which got second place in the <em>Blizzard Hackathon, 2022</em>!
 										</p>
 									</div>
 								</details>
