@@ -202,7 +202,7 @@
 		description: `A simple open-source community CLI tool for fetching and parsing ISO-3166-1 country data for use in Semantic UI React dropdown components.`
 	};
 	const homeDash: Project = {
-		type: ProjectType.CLI,
+		type: ProjectType.WEB,
 		title: 'home-dash',
 		metaImage: homeDash_img,
 		githubLink: 'https://github.com/tsturtz/my-shell-scripts/tree/master/openhome',
