@@ -89,6 +89,8 @@
 	import FastApiIcon from '$lib/components/Icons/devicons/FastApiIcon.svelte';
 	import PythonIcon from '$lib/components/Icons/devicons/PythonIcon.svelte';
 	import FastifyIcon from '$lib/components/Icons/devicons/FastifyIcon.svelte';
+	import CPlusPlusIcon from '$lib/components/Icons/devicons/CPlusPlusIcon.svelte';
+	import JssIcon from '$lib/components/Icons/devicons/JssIcon.svelte';
 
 	let mounted = false;
 	let scrollPosition = 0;
@@ -664,7 +666,7 @@
 										<TableRowDashedDivider />
 										<!-- CSS -->
 										<tr>
-											<td rowspan="2">
+											<td rowspan="3">
 												<div style="display: flex; align-items: center;">
 													<CssIcon --size="16px" />&nbsp;CSS
 												</div>
@@ -679,6 +681,13 @@
 											<td>
 												<div style="display: flex; align-items: center;">
 													<TailwindIcon --size="16px" />&nbsp;Tailwind
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<JssIcon --size="16px" />&nbsp;JSS
 												</div>
 											</td>
 										</tr>
@@ -770,7 +779,12 @@
 										<tr>
 											<td>
 												<div style="display: flex; align-items: center;">
-													<ArduinoIcon --size="16px" />&nbsp;Arduino (C++)
+													<CPlusPlusIcon --size="16px" />&nbsp;C++
+												</div>
+											</td>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<ArduinoIcon --size="16px" />&nbsp;Arduino
 												</div>
 											</td>
 										</tr>
