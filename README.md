@@ -4,6 +4,9 @@
 
 I created this version to learn Svelte and use Vite cause I was tired of the v2 design.
 
+TODO: reduce image sizes
+
 Older versions:
+
 - v2: https://github.com/tsturtz/taylorsturtz-dot-com-v2
 - v1: https://github.com/tsturtz/taylorsturtz-dot-com-v1

@@ -53,7 +53,6 @@
 	import StorybookIcon from '$lib/components/Icons/devicons/StorybookIcon.svelte';
 	import SvelteIcon from '$lib/components/Icons/devicons/SvelteIcon.svelte';
 	import TypeScriptIcon from '$lib/components/Icons/devicons/TypeScriptIcon.svelte';
-	import VueIcon from '$lib/components/Icons/devicons/VueIcon.svelte';
 
 	// PassportStamps
 	import Columbus from '$lib/components/PassportStamps/Columbus.svelte';
@@ -87,6 +86,9 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import TailwindIcon from '$lib/components/Icons/devicons/TailwindIcon.svelte';
+	import FastApiIcon from '$lib/components/Icons/devicons/FastApiIcon.svelte';
+	import PythonIcon from '$lib/components/Icons/devicons/PythonIcon.svelte';
+	import FastifyIcon from '$lib/components/Icons/devicons/FastifyIcon.svelte';
 
 	let mounted = false;
 	let scrollPosition = 0;
@@ -612,8 +614,8 @@
 					</p>
 					<div style="display: flex;">
 						<VerticalDivider text="Stack" />
-						<table style="white-space: nowrap;">
-							<tr style="font-size: .9rem;">
+						<table style="white-space: nowrap; font-size: .9rem;">
+							<tr>
 								<th>Domain</th>
 								<th>Technology</th>
 							</tr>
@@ -622,144 +624,214 @@
 									<hr style="margin-bottom: 5px;" />
 								</td>
 							</tr>
+							<!-- Design -->
 							<tr>
-								<td rowspan="3" style="font-size: .9rem;">Design</td>
-								<td style="color: white; display: flex; align-items: center;"
-									><PhotoshopIcon --size="16px" />&nbsp;Adobe CC</td
-								>
+								<td rowspan="3">Design</td>
+								<td style="color: white;">
+									<div style="display: flex; align-items: center;">
+										<PhotoshopIcon --size="16px" />&nbsp;Adobe CC
+									</div>
+								</td>
 							</tr>
 							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><BalsamiqIcon --size="16px" />&nbsp;Balsamiq</td
-								>
+								<td style="color: white;">
+									<div style="display: flex; align-items: center;">
+										<BalsamiqIcon --size="16px" />&nbsp;Balsamiq
+									</div>
+								</td>
 							</tr>
 							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><FigmaIcon --size="16px" />&nbsp;Figma</td
-								>
-							</tr>
-							<TableRowDashedDivider />
-							<tr>
-								<td rowspan="14" style="font-size: .9rem;">Client</td>
-								<td style="color: white; display: flex; align-items: center;"
-									><AngularIcon --size="16px" />&nbsp;AngularJS</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><AngularIcon --size="16px" />&nbsp;Angular</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><CssIcon --size="16px" />&nbsp;CSS</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><HtmlIcon --size="16px" />&nbsp;HTML</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><JavaScriptIcon --size="16px" />&nbsp;JavaScript</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><JqueryIcon --size="16px" />&nbsp;jQuery</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><ReactIcon --size="16px" />&nbsp;React</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><ReactIcon --size="16px" />&nbsp;React Native</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><SassIcon --size="16px" />&nbsp;Sass</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><StorybookIcon --size="16px" />&nbsp;Storybook</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><SvelteIcon --size="16px" />&nbsp;Svelte</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><TailwindIcon --size="16px" />&nbsp;Tailwind</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><TypeScriptIcon --size="16px" />&nbsp;TypeScript</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><VueIcon --size="16px" />&nbsp;Vue</td
-								>
+								<td style="color: white;">
+									<div style="display: flex; align-items: center;">
+										<FigmaIcon --size="16px" />&nbsp;Figma
+									</div>
+								</td>
 							</tr>
 							<TableRowDashedDivider />
+							<!-- Programming -->
 							<tr>
-								<td rowspan="9" style="font-size: .9rem;">Server</td>
-								<td style="color: white; display: flex; align-items: center;"
-									><ArduinoIcon --size="16px" />&nbsp;Arduino (C++)</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><ExpressIcon --size="16px" />&nbsp;Express</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><GoIcon --size="16px" />&nbsp;Go</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><JavaIcon --size="16px" />&nbsp;Java</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><LaravelIcon --size="16px" />&nbsp;Laravel</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><NextIcon --size="16px" />&nbsp;Next</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><NodeIcon --size="16px" />&nbsp;Node</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><PhpIcon --size="16px" />&nbsp;PHP</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><SpringIcon --size="16px" />&nbsp;Spring</td
-								>
+								<td rowspan="1">Programming</td>
+								<td>
+									<table style="color: white;">
+										<!-- HTML -->
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<HtmlIcon --size="16px" />&nbsp;HTML
+												</div>
+											</td>
+										</tr>
+										<TableRowDashedDivider />
+										<!-- CSS -->
+										<tr>
+											<td rowspan="2">
+												<div style="display: flex; align-items: center;">
+													<CssIcon --size="16px" />&nbsp;CSS
+												</div>
+											</td>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<SassIcon --size="16px" />&nbsp;Sass
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<TailwindIcon --size="16px" />&nbsp;Tailwind
+												</div>
+											</td>
+										</tr>
+										<TableRowDashedDivider />
+										<!-- JS -->
+										<tr>
+											<td rowspan="10">
+												<div>
+													<div style="display: flex; align-items: center;">
+														<JavaScriptIcon --size="16px" />&nbsp;JavaScript
+													</div>
+													<div style="display: flex; align-items: center;">
+														<TypeScriptIcon --size="16px" />&nbsp;TypeScript
+													</div>
+													<div style="display: flex; align-items: center;">
+														<NodeIcon --size="16px" />&nbsp;Node
+													</div>
+												</div>
+											</td>
+											<td>
+												<div style="display: flex; align-items: center;" />
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<AngularIcon --size="16px" />&nbsp;AngularJS
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<AngularIcon --size="16px" />&nbsp;Angular
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<ExpressIcon --size="16px" />&nbsp;Express
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<FastifyIcon --size="16px" />&nbsp;Fastify
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<JqueryIcon --size="16px" />&nbsp;jQuery
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<NextIcon --size="16px" />&nbsp;Next
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<ReactIcon --size="16px" />&nbsp;React
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<ReactIcon --size="16px" />&nbsp;React Native
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<SvelteIcon --size="16px" />&nbsp;Svelte
+												</div>
+											</td>
+										</tr>
+										<TableRowDashedDivider />
+										<!-- Arduino (C++) -->
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<ArduinoIcon --size="16px" />&nbsp;Arduino (C++)
+												</div>
+											</td>
+										</tr>
+										<TableRowDashedDivider />
+										<!-- Go -->
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<GoIcon --size="16px" />&nbsp;Go
+												</div>
+											</td>
+										</tr>
+										<TableRowDashedDivider />
+										<!-- Java -->
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<JavaIcon --size="16px" />&nbsp;Java
+												</div>
+											</td>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<SpringIcon --size="16px" />&nbsp;Spring
+												</div>
+											</td>
+										</tr>
+										<TableRowDashedDivider />
+										<!-- PHP -->
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<PhpIcon --size="16px" />&nbsp;PHP
+												</div>
+											</td>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<LaravelIcon --size="16px" />&nbsp;Laravel
+												</div>
+											</td>
+										</tr>
+										<TableRowDashedDivider />
+										<!-- Python -->
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<PythonIcon --size="16px" />&nbsp;Python
+												</div>
+											</td>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<FastApiIcon --size="16px" />&nbsp;FastAPI
+												</div>
+											</td>
+										</tr>
+									</table>
+								</td>
 							</tr>
 							<TableRowDashedDivider />
+							<!-- Testing -->
 							<tr>
-								<td rowspan="3" style="font-size: .9rem;">Testing</td>
+								<td rowspan="4">Testing</td>
 								<td style="color: white; display: flex; align-items: center;"
 									><PlaywrightIcon --size="16px" />&nbsp;Playwright</td
 								>
@@ -774,9 +846,15 @@
 									><SeleniumIcon --size="16px" />&nbsp;Selenium</td
 								>
 							</tr>
-							<TableRowDashedDivider />
 							<tr>
-								<td rowspan="4" style="font-size: .9rem;">Database</td>
+								<td style="color: white; display: flex; align-items: center;"
+									><StorybookIcon --size="16px" />&nbsp;Storybook</td
+								>
+							</tr>
+							<TableRowDashedDivider />
+							<!-- Database -->
+							<tr>
+								<td rowspan="4">Database</td>
 								<td style="color: white; display: flex; align-items: center;"
 									><FirebaseIcon --size="16px" />&nbsp;Firebase</td
 								>
@@ -797,15 +875,13 @@
 								>
 							</tr>
 							<TableRowDashedDivider />
+							<!-- DevOps -->
 							<tr>
-								<td rowspan="8" style="font-size: .9rem;">Infra.</td>
+								<td rowspan="8">DevOps</td>
 								<td style="color: white; display: flex; align-items: center;"
 									><AwsIcon --size="16px" />&nbsp;AWS</td
 								>
 							</tr>
-							<!-- <tr>
-                <td style="color: white; display: flex; align-items: center;"><AzureIcon --size="16px" />&nbsp;Azure</td>
-              </tr> -->
 							<tr>
 								<td style="color: white; display: flex; align-items: center;"
 									><DockerIcon --size="16px" />&nbsp;Docker</td
@@ -816,9 +892,6 @@
 									><GitIcon --size="16px" />&nbsp;Git</td
 								>
 							</tr>
-							<!-- <tr>
-                <td style="color: white; display: flex; align-items: center;"><GcpIcon --size="16px" />&nbsp;Google Cloud</td>
-              </tr> -->
 							<tr>
 								<td style="color: white; display: flex; align-items: center;"
 									><JenkinsIcon --size="16px" />&nbsp;Jenkins</td
