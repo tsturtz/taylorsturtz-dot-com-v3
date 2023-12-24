@@ -673,6 +673,13 @@
 											</td>
 											<td>
 												<div style="display: flex; align-items: center;">
+													<JssIcon --size="16px" />&nbsp;JSS
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
 													<SassIcon --size="16px" />&nbsp;Sass
 												</div>
 											</td>
@@ -684,18 +691,11 @@
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td>
-												<div style="display: flex; align-items: center;">
-													<JssIcon --size="16px" />&nbsp;JSS
-												</div>
-											</td>
-										</tr>
 										<TableRowDashedDivider />
 										<!-- JS -->
 										<tr>
-											<td rowspan="10">
-												<div>
+											<td rowspan="10" style="padding-right: 12px;">
+												<div style="display: flex; flex-direction: column; gap: 2px;">
 													<div style="display: flex; align-items: center;">
 														<JavaScriptIcon --size="16px" />&nbsp;JavaScript
 													</div>
@@ -706,9 +706,6 @@
 														<NodeIcon --size="16px" />&nbsp;Node
 													</div>
 												</div>
-											</td>
-											<td>
-												<div style="display: flex; align-items: center;" />
 											</td>
 										</tr>
 										<tr>

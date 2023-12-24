@@ -81,7 +81,7 @@
 		type: ProjectType.WEB,
 		title: 'taylor-sturtz-dot-com-v3',
 		metaImage: tsV3_img,
-		stack: ['SvelteKit', 'Sass', 'SVG'],
+		stack: ['Svelte', 'Sass', 'SVG', 'Vite'],
 		githubLink: 'https://github.com/tsturtz/taylorsturtz-dot-com-v3',
 		description: `The <strong>current</strong> iteration of my developer portfolio site. Built as an opportunity to learn Svelte and with a creative desire to revamp the site.`
 	};
