@@ -1040,6 +1040,9 @@ background-size: 15px 15px; -->
 		position: absolute;
 		bottom: 0;
 		min-width: 2000px;
+		@include md {
+			bottom: -100px;
+		}
 	}
 
 	main {
@@ -1121,6 +1124,7 @@ background-size: 15px 15px; -->
 		text-align: center;
 		margin-top: 70px;
 		@include md {
+			margin-top: 50px;
 			display: block;
 		}
 	}
@@ -1204,6 +1208,9 @@ background-size: 15px 15px; -->
 			}
 			p {
 				text-align: justify;
+				@include md {
+					line-height: 1.6;
+				}
 			}
 			#details-social {
 				@include md {
