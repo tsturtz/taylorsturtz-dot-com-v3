@@ -1020,6 +1020,9 @@ background-size: 15px 15px; -->
 		height: 1200px;
 		width: 100%;
 		position: relative;
+		@include md {
+			height: 1100px;
+		}
 	}
 	#hero-bg {
 		position: absolute;
@@ -1040,9 +1043,6 @@ background-size: 15px 15px; -->
 		position: absolute;
 		bottom: 0;
 		min-width: 2000px;
-		@include md {
-			bottom: -100px;
-		}
 	}
 
 	main {
