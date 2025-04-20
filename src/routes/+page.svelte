@@ -30,6 +30,7 @@
 	import GcpIcon from '$lib/components/Icons/devicons/GcpIcon.svelte';
 	import GitIcon from '$lib/components/Icons/devicons/GitIcon.svelte';
 	import GoIcon from '$lib/components/Icons/devicons/GoIcon.svelte';
+	import GraphqlIcon from '$lib/components/Icons/devicons/GraphqlIcon.svelte';
 	import HtmlIcon from '$lib/components/Icons/devicons/HtmlIcon.svelte';
 	import JavaIcon from '$lib/components/Icons/devicons/JavaIcon.svelte';
 	import JavaScriptIcon from '$lib/components/Icons/devicons/JavaScriptIcon.svelte';
@@ -91,6 +92,9 @@
 	import FastifyIcon from '$lib/components/Icons/devicons/FastifyIcon.svelte';
 	import CPlusPlusIcon from '$lib/components/Icons/devicons/CPlusPlusIcon.svelte';
 	import JssIcon from '$lib/components/Icons/devicons/JssIcon.svelte';
+	import ApolloIcon from '$lib/components/Icons/devicons/ApolloIcon.svelte';
+	import PostgresIcon from '$lib/components/Icons/devicons/PostgresIcon.svelte';
+	import LiquibaseIcon from '$lib/components/Icons/devicons/LiquibaseIcon.svelte';
 
 	let mounted = false;
 	let scrollPosition = 0;
@@ -694,7 +698,7 @@
 										<TableRowDashedDivider />
 										<!-- JS -->
 										<tr>
-											<td rowspan="10" style="padding-right: 12px;">
+											<td rowspan="11" style="padding-right: 12px;">
 												<div style="display: flex; flex-direction: column; gap: 2px;">
 													<div style="display: flex; align-items: center;">
 														<JavaScriptIcon --size="16px" />&nbsp;JavaScript
@@ -721,6 +725,13 @@
 													<AngularIcon --size="16px" />&nbsp;Angular
 												</div>
 											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<ApolloIcon --size="16px" />&nbsp;Apollo GraphQL
+												</div></td
+											>
 										</tr>
 										<tr>
 											<td>
@@ -797,14 +808,23 @@
 										<TableRowDashedDivider />
 										<!-- Java -->
 										<tr>
-											<td>
+											<td rowspan="3" style="padding-right: 12px;">
 												<div style="display: flex; align-items: center;">
 													<JavaIcon --size="16px" />&nbsp;Java
 												</div>
 											</td>
+										</tr>
+										<tr>
 											<td>
 												<div style="display: flex; align-items: center;">
 													<SpringIcon --size="16px" />&nbsp;Spring
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="display: flex; align-items: center;">
+													<GraphqlIcon --size="16px" />&nbsp;Spring GraphQL
 												</div>
 											</td>
 										</tr>
@@ -865,9 +885,14 @@
 							<TableRowDashedDivider />
 							<!-- Database -->
 							<tr>
-								<td rowspan="4">Database</td>
+								<td rowspan="6">Database</td>
 								<td style="color: white; display: flex; align-items: center;"
 									><FirebaseIcon --size="16px" />&nbsp;Firebase</td
+								>
+							</tr>
+							<tr>
+								<td style="color: white; display: flex; align-items: center;"
+									><LiquibaseIcon --size="16px" />&nbsp;Liquibase</td
 								>
 							</tr>
 							<tr>
@@ -885,38 +910,49 @@
 									><OracleIcon --size="16px" />&nbsp;Oracle</td
 								>
 							</tr>
+							<tr>
+								<td style="color: white; display: flex; align-items: center;"
+									><PostgresIcon --size="16px" />&nbsp;Postgres</td
+								>
+							</tr>
 							<TableRowDashedDivider />
-							<!-- DevOps -->
+							<!-- Infra -->
 							<tr>
-								<td rowspan="8">DevOps</td>
-								<td style="color: white; display: flex; align-items: center;"
-									><AwsIcon --size="16px" />&nbsp;AWS</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><DockerIcon --size="16px" />&nbsp;Docker</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><GitIcon --size="16px" />&nbsp;Git</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><JenkinsIcon --size="16px" />&nbsp;Jenkins</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><NginxIcon --size="16px" />&nbsp;NGINX</td
-								>
-							</tr>
-							<tr>
-								<td style="color: white; display: flex; align-items: center;"
-									><BashIcon --size="16px" />&nbsp;Shell scripting</td
-								>
+								<td rowspan="1">Infra/DevOps</td>
+								<td>
+									<table style="color: white;">
+										<tr>
+											<td style="color: white; display: flex; align-items: center;">
+												<AwsIcon --size="16px" />&nbsp;AWS CDK
+											</td>
+										</tr>
+										<tr>
+											<td style="color: white; display: flex; align-items: center;"
+												><DockerIcon --size="16px" />&nbsp;Docker</td
+											>
+										</tr>
+										<tr>
+											<td style="color: white; display: flex; align-items: center;"
+												><GitIcon --size="16px" />&nbsp;Git</td
+											>
+										</tr>
+										<tr>
+											<td style="color: white; display: flex; align-items: center;"
+												><JenkinsIcon --size="16px" />&nbsp;Jenkins</td
+											>
+										</tr>
+										<tr>
+											<td style="color: white; display: flex; align-items: center;"
+												><NginxIcon --size="16px" />&nbsp;NGINX</td
+											>
+										</tr>
+										<tr>
+											<td style="color: white; display: flex; align-items: center;"
+												><BashIcon --size="16px" />&nbsp;Shell scripts</td
+											>
+										</tr>
+									</table>
+								</td>
 							</tr>
 						</table>
 					</div>
