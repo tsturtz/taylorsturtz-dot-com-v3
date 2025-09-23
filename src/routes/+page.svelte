@@ -1071,7 +1071,6 @@
 	>
 		<div id="chatbot-btn" on:click={handleToggleChatbot}>
 			{#if isChatbotOpen}
-				<em>Ask about my skills and experience{' '}</em>
 				<svg
 					id="chevron-down"
 					xmlns="http://www.w3.org/2000/svg"
@@ -1148,11 +1147,11 @@ background-size: 15px 15px; -->
 		right: 150px;
 		background-color: var(--accent1-dim);
 		color: var(--primary);
-		transition: all 0.3s ease-in-out;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		padding: 20px;
+		transition: all 0.3s ease-in-out;
 		#chatbot-btn {
 			padding-top: 10px;
 			display: flex;
@@ -1160,12 +1159,14 @@ background-size: 15px 15px; -->
 			align-items: center;
 			gap: 20px;
 			cursor: pointer;
-			color: var(--accent1-dark)
+			color: var(--accent1-dark);
+			transition: all 0.3s ease-in-out;
 		}
 		#chatbot-response {
 			flex-grow: 1;
 			margin: 10px 0;
 			overflow: scroll;
+			transition: all 0.3s ease-in-out;
 			.loading-ellipsis {
 				.loading-ellpisis:after {
 					overflow: hidden;
@@ -1191,6 +1192,7 @@ background-size: 15px 15px; -->
 		#chatbot-input {
 			display: flex;
 			justify-content: center;
+			transition: all 0.3s ease-in-out;
 			textarea {
 				width: 100%;
 				border: none;
@@ -1198,6 +1200,7 @@ background-size: 15px 15px; -->
 				font-size: 1.1rem;
 				padding: 10px;
 				resize: none;
+				transition: all 0.3s ease-in-out;
 			}
 		}
 		#chevron-up, #chevron-down {
