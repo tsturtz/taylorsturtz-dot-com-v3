@@ -1109,7 +1109,7 @@
 		</div>
 		<div id="chatbot-response" style="display: {isChatbotOpen ? 'block' : 'none'};">
 			{#if isLoadingChatbotResponse}
-				<div class="loading-ellipsis">Loading</div>
+				<p>...</p>
 			{:else}
 				<p>{chatbotResponse}</p>
 			{/if}
@@ -1167,27 +1167,6 @@ background-size: 15px 15px; -->
 			margin: 10px 0;
 			overflow: scroll;
 			transition: all 0.3s ease-in-out;
-			.loading-ellipsis {
-				.loading-ellpisis:after {
-					overflow: hidden;
-					display: inline-block;
-					vertical-align: bottom;
-					-webkit-animation: ellipsis steps(4,end) 900ms infinite;      
-					animation: ellipsis steps(4,end) 900ms infinite;
-					content: "\2026"; /* ascii code for the ellipsis character */
-					width: 0px;
-				}
-				@keyframes ellipsis {
-					to {
-						width: 1.25em;    
-					}
-				}
-				@-webkit-keyframes ellipsis {
-					to {
-						width: 1.25em;    
-					}
-				}
-			}
 		}
 		#chatbot-input {
 			display: flex;
