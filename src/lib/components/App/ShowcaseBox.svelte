@@ -35,7 +35,7 @@
 			descLines = Math.ceil(desc!.offsetHeight / fontSize);
 			// descLinesOffset = ((descLines - descLinesLimit) * fontSize) - 5; // adjust -5 to clear it
 		}
-		console.log(metaImage);
+		// console.log(metaImage);
 	});
 
 	const handleLightboxToggle = () => {

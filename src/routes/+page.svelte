@@ -97,12 +97,38 @@
 	import LiquibaseIcon from '$lib/components/Icons/devicons/LiquibaseIcon.svelte';
 
 	let mounted = false;
+	let isChatbotOpen = false;
 	let scrollPosition = 0;
 	// $: console.log('🚀 ~ scrollPosition', scrollPosition);
 
 	onMount(() => {
 		mounted = true;
 	});
+	
+	const handleToggleChatbot = () => {
+		isChatbotOpen = !isChatbotOpen;
+	};
+
+	const handleSubmitQuestionToChatbot = async (event: KeyboardEvent) => {
+		event.preventDefault();
+		if (event.key === 'Enter') {
+            const input = document.querySelector('#chatbot-input textarea') as HTMLTextAreaElement;
+			const prompt = input.value.trim();
+			input.value = '';
+			const response = await fetch(
+				'post-chatbot', // TODO:
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ prompt })
+				}
+			);
+			const data = await response.json();
+			console.log('response data >>>', data);
+        }
+	};
 </script>
 
 <svelte:window bind:scrollY={scrollPosition} />
@@ -1018,6 +1044,67 @@
 			</div>
 		</footer>
 	</div>
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<div
+		id="chatbot"
+		style="
+			height: {isChatbotOpen ? '500px' : '43px'};
+			width: {isChatbotOpen ? '400px' : '180px'};
+			right: {isChatbotOpen ? '50px' : '150px'};
+			bottom: {isChatbotOpen ? '20px' : '0px'};
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			border-bottom-left-radius: {isChatbotOpen ? '10px' : '0px'};
+			border-bottom-right-radius: {isChatbotOpen ? '10px' : '0px'};
+			padding: {isChatbotOpen ? '0 20px 20px' : '0px'};
+		"
+	>
+		<div id="chatbot-btn" on:click={handleToggleChatbot}>
+			{#if isChatbotOpen}
+				<em>Ask about my skills and experience{' '}</em>
+				<svg
+					id="chevron-down"
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="feather feather-chevron-down"
+					style="margin-right: -20px;"
+				>
+					<polyline points="6 9 12 15 18 9"></polyline>
+				</svg>
+			{:else}
+				<em>Let's chat!{' '}</em>
+				<svg
+					id="chevron-up"
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="feather feather-chevron-up"
+					style="margin-right: -20px;"
+				>
+					<polyline points="18 15 12 9 6 15"></polyline>
+				</svg>
+			{/if}
+		</div>
+		<div id="chatbot-response" style="display: {isChatbotOpen ? 'block' : 'none'};">
+			<p>Hello! I'm a bot that is still under construction. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quia modi corporis voluptatibus similique error. Non molestias ducimus, delectus porro neque unde sit nesciunt quaerat id dolorem, rem corrupti dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit vitae quis praesentium voluptatem veniam voluptate nobis temporibus nisi corporis expedita, obcaecati recusandae eos ut doloremque minima odio. Sit iste officiis et. Excepturi provident similique itaque. Eos error magni soluta adipisci, ducimus iusto odio a tempore. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam nesciunt molestias itaque reiciendis dignissimos repellat, labore, adipisci expedita dolorum omnis amet quis. Suscipit, libero rerum blanditiis eos tempore inventore reprehenderit soluta aut sunt sed explicabo. Illum eum vitae reiciendis deleniti quidem incidunt voluptatum laborum numquam sit, possimus soluta quae facilis praesentium quisquam doloribus provident et ratione corrupti tenetur repellendus asperiores! Ut libero ipsam reprehenderit repellendus deserunt, ratione, officia eveniet maxime velit dolores dolore! Ut quibusdam reprehenderit provident! Dolorum aperiam numquam nisi odio quo totam ex ab animi dolor iure odit quia, omnis rerum consequatur obcaecati similique quod maxime eveniet in.</p>
+		</div>
+		<div id="chatbot-input" on:keyup={handleSubmitQuestionToChatbot} style="display: {isChatbotOpen ? 'flex' : 'none'};">
+			<textarea rows="3" placeholder="Type a message..." />
+		</div>
+	</div>
 </main>
 
 <!-- clock idea -->
@@ -1038,6 +1125,52 @@ linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 
 background-size: 15px 15px; -->
 
 <style lang="scss">
+	#chatbot {
+		position: fixed;
+		z-index: 10;
+		width: 180px;
+		height: 43px;
+		bottom: 0;
+		right: 150px;
+		background-color: var(--accent1-dim);
+		color: var(--primary);
+		transition: all 0.3s ease-in-out;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px;
+		#chatbot-btn {
+			padding-top: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			cursor: pointer;
+			color: var(--accent1-dark)
+		}
+		#chatbot-response {
+			flex-grow: 1;
+			margin: 10px 0;
+			overflow: scroll;
+		}
+		#chatbot-input {
+			display: flex;
+			justify-content: center;
+			textarea {
+				width: 100%;
+				border: none;
+				border-radius: 5px;
+				font-size: 1.1rem;
+				padding: 10px;
+				resize: none;
+			}
+		}
+		#chevron-up, #chevron-down {
+			transform: translateX(-50%);
+			opacity: 0.5;
+			animation: bounce 2s infinite;
+		}
+	}
 	.section-heading {
 		@include md {
 			font-size: 3rem;
