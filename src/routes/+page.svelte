@@ -98,6 +98,8 @@
 
 	let mounted = false;
 	let isChatbotOpen = false;
+	let chatbotResponse = "Hi. I'm able to answer questions about Taylor's skills and experience. Ask away!"; 
+  	let isLoadingChatbotResponse = false;
 	let scrollPosition = 0;
 	// $: console.log('🚀 ~ scrollPosition', scrollPosition);
 
@@ -112,21 +114,29 @@
 	const handleSubmitQuestionToChatbot = async (event: KeyboardEvent) => {
 		event.preventDefault();
 		if (event.key === 'Enter') {
+			isLoadingChatbotResponse = true;
             const input = document.querySelector('#chatbot-input textarea') as HTMLTextAreaElement;
 			const prompt = input.value.trim();
 			input.value = '';
-			const response = await fetch(
-				'https://taylorsturtz.com/.netlify/functions/post-chatbot',
-				{
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({ prompt })
-				}
-			);
-			const data = await response.json();
-			console.log('response data >>>', data);
+			try {
+				const response = await fetch(
+					'https://taylorsturtz.com/.netlify/functions/post-chatbot',
+					{
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({ prompt })
+					}
+				);
+				const data = await response.json();
+				chatbotResponse = data.response;
+			} catch (error) {
+				console.error("Failed to fetch from chatbot API:", error);
+				chatbotResponse = "Sorry, something went wrong. Please try again.";
+			} finally {
+          		isLoadingChatbotResponse = false;
+      		}
         }
 	};
 </script>
@@ -1099,7 +1109,11 @@
 			{/if}
 		</div>
 		<div id="chatbot-response" style="display: {isChatbotOpen ? 'block' : 'none'};">
-			<p>Hello! I'm a bot that is still under construction. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quia modi corporis voluptatibus similique error. Non molestias ducimus, delectus porro neque unde sit nesciunt quaerat id dolorem, rem corrupti dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit vitae quis praesentium voluptatem veniam voluptate nobis temporibus nisi corporis expedita, obcaecati recusandae eos ut doloremque minima odio. Sit iste officiis et. Excepturi provident similique itaque. Eos error magni soluta adipisci, ducimus iusto odio a tempore. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam nesciunt molestias itaque reiciendis dignissimos repellat, labore, adipisci expedita dolorum omnis amet quis. Suscipit, libero rerum blanditiis eos tempore inventore reprehenderit soluta aut sunt sed explicabo. Illum eum vitae reiciendis deleniti quidem incidunt voluptatum laborum numquam sit, possimus soluta quae facilis praesentium quisquam doloribus provident et ratione corrupti tenetur repellendus asperiores! Ut libero ipsam reprehenderit repellendus deserunt, ratione, officia eveniet maxime velit dolores dolore! Ut quibusdam reprehenderit provident! Dolorum aperiam numquam nisi odio quo totam ex ab animi dolor iure odit quia, omnis rerum consequatur obcaecati similique quod maxime eveniet in.</p>
+			{#if isLoadingChatbotResponse}
+				<div class="loading-ellipsis">Loading</div>
+			{:else}
+				<p>{chatbotResponse}</p>
+			{/if}
 		</div>
 		<div id="chatbot-input" on:keyup={handleSubmitQuestionToChatbot} style="display: {isChatbotOpen ? 'flex' : 'none'};">
 			<textarea rows="3" placeholder="Type a message..." />
@@ -1152,6 +1166,27 @@ background-size: 15px 15px; -->
 			flex-grow: 1;
 			margin: 10px 0;
 			overflow: scroll;
+			.loading-ellipsis {
+				.loading-ellpisis:after {
+					overflow: hidden;
+					display: inline-block;
+					vertical-align: bottom;
+					-webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+					animation: ellipsis steps(4,end) 900ms infinite;
+					content: "\2026"; /* ascii code for the ellipsis character */
+					width: 0px;
+				}
+				@keyframes ellipsis {
+					to {
+						width: 1.25em;    
+					}
+				}
+				@-webkit-keyframes ellipsis {
+					to {
+						width: 1.25em;    
+					}
+				}
+			}
 		}
 		#chatbot-input {
 			display: flex;
