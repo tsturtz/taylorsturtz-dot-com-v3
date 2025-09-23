@@ -116,7 +116,7 @@
 			const prompt = input.value.trim();
 			input.value = '';
 			const response = await fetch(
-				'post-chatbot', // TODO:
+				'https://taylorsturtz.com/.netlify/functions/post-chatbot',
 				{
 					method: 'POST',
 					headers: {
