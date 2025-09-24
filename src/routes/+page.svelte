@@ -98,7 +98,7 @@
 
 	let mounted = false;
 	let isChatbotOpen = false;
-	let chatbotResponse = "Hi. I'm able to answer questions about Taylor's skills and experience. Ask away!"; 
+	let chatbotResponse = "🤖 Hi. I'm able to answer questions about Taylor's skills and experience. Ask away!"; 
   	let isLoadingChatbotResponse = false;
 	let scrollPosition = 0;
 	// $: console.log('🚀 ~ scrollPosition', scrollPosition);
