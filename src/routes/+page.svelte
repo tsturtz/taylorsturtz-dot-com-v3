@@ -1055,20 +1055,7 @@
 		</footer>
 	</div>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div
-		id="chatbot"
-		style="
-			height: {isChatbotOpen ? '500px' : '43px'};
-			width: {isChatbotOpen ? '400px' : '180px'};
-			right: {isChatbotOpen ? '50px' : '150px'};
-			bottom: {isChatbotOpen ? '20px' : '0px'};
-			border-top-left-radius: 10px;
-			border-top-right-radius: 10px;
-			border-bottom-left-radius: {isChatbotOpen ? '10px' : '0px'};
-			border-bottom-right-radius: {isChatbotOpen ? '10px' : '0px'};
-			padding: {isChatbotOpen ? '0 20px 20px' : '0px'};
-		"
-	>
+	<div id="chatbot" class:is-open={isChatbotOpen}>
 		<div id="chatbot-btn" on:click={handleToggleChatbot}>
 			{#if isChatbotOpen}
 				<svg
@@ -1143,15 +1130,28 @@ background-size: 15px 15px; -->
 		z-index: 10;
 		width: 180px;
 		height: 43px;
-		bottom: 0;
+		bottom: 0px;
 		right: 150px;
 		background-color: var(--accent1-dim);
 		color: var(--primary);
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 20px;
+		padding: 0px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
 		transition: all 0.3s ease-in-out;
+		&.is-open {
+            height: 500px;
+            width: 400px;
+            right: 50px;
+            bottom: 20px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+			padding: 0 20px 20px;
+        }
 		#chatbot-btn {
 			padding-top: 10px;
 			display: flex;
@@ -1188,6 +1188,25 @@ background-size: 15px 15px; -->
 			animation: bounce 2s infinite;
 		}
 	}
+	// Styles for when the chatbot is open on small screens
+    @media (max-width: 640px) {
+        #chatbot {
+			left: 50%;
+			right: 50%;
+			transform: translate(-50%, 0);
+			&.is-open {
+				height: 60vh;
+				width: calc(100vw - 80px);
+				left: 50%;
+				right: 50%;
+				bottom: 20px;
+				transform: translate(-50%, 0);
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				padding: 0px 20px 20px;
+			}
+		}
+    }
 	.section-heading {
 		@include md {
 			font-size: 3rem;
