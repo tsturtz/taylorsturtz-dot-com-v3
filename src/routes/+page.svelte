@@ -105,6 +105,9 @@
 
 	onMount(() => {
 		mounted = true;
+		setTimeout(() => {
+			isChatbotOpen = true;
+		}, 1000);
 	});
 	
 	const handleToggleChatbot = () => {
@@ -1102,7 +1105,7 @@
 			{/if}
 		</div>
 		<div id="chatbot-input" on:keyup={handleSubmitQuestionToChatbot} style="display: {isChatbotOpen ? 'flex' : 'none'};">
-			<textarea rows="3" placeholder="Type a message..." />
+			<textarea autofocus rows="3" placeholder="Type a message..." />
 		</div>
 	</div>
 </main>
