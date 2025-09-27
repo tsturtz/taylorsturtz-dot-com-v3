@@ -1105,7 +1105,7 @@
 			{/if}
 		</div>
 		<div id="chatbot-input" on:keyup={handleSubmitQuestionToChatbot} style="display: {isChatbotOpen ? 'flex' : 'none'};">
-			<textarea autofocus rows="3" placeholder="Type a message..." />
+			<textarea autofocus rows="3" placeholder="Type a message..." maxlength="500" />
 		</div>
 	</div>
 </main>
