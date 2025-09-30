@@ -1168,7 +1168,7 @@ background-size: 15px 15px; -->
 		#chatbot-response {
 			flex-grow: 1;
 			margin: 10px 0;
-			overflow: scroll;
+			overflow: auto;
 			transition: all 0.3s ease-in-out;
 		}
 		#chatbot-input {
