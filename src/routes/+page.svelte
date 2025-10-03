@@ -1131,7 +1131,7 @@
 		>
 			<textarea
 				autofocus
-				disabled={isChatbotInteractable}
+				disabled={!isChatbotInteractable}
 				rows="3"
 				placeholder="Type a message..."
 				maxlength="500"
