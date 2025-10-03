@@ -17,6 +17,8 @@
 	import iWantMyBbTv_img_anim from '$lib/images/demos/i-want-my-bbtv.gif';
 	import wc2026TixScaper_img from '$lib/images/demos/wc2026-tix-scraper.jpg';
 	import soccer6Slackbot_img from '$lib/images/demos/soccer6slackbot.png';
+	import portfolioChatbot_img from '$lib/images/demos/portfolio-chatbot.jpg';
+	import portfolioChatbot_img_anim from '$lib/images/demos/portfolio-chatbot.gif';
 	import semanticUiReactCountries_img from '$lib/images/demos/semantic-ui-react-countries.jpg';
 	import semanticUiReactCountries_img_anim from '$lib/images/demos/semantic-ui-react-countries.gif';
 	import homeDash_img from '$lib/images/demos/home-dash.jpg';
@@ -190,6 +192,15 @@
 		stack: ['Go', 'GoQuery'],
 		description: `An interactive slack bot to retrieve information about Soccer6's game schedules and scores. Periodic scheduled reminders sent to my soccer team's slack channel with up-to-date information.`
 	};
+	const portfolioChatbot: Project = {
+		type: ProjectType.BOT,
+		title: 'portfolio-chatbot',
+		metaImage: portfolioChatbot_img,
+		metaImageAnimated: portfolioChatbot_img_anim,
+		githubLink: 'https://github.com/tsturtz/portfolio-chatbot',
+		stack: ['Python', 'Flask', 'LangChain', 'Chroma DB'],
+		description: `A RAG (resource augmented generation) chatbot for my personal portfolio website, trained to respond to questions about my professional experience and skillset.`
+	};
 	// cli
 	const semanticUiReactCountries: Project = {
 		type: ProjectType.CLI,
@@ -221,6 +232,7 @@
 		realValue,
 		toejamAndEarlJamOut,
 		soccer6Slackbot,
+		portfolioChatbot,
 		meetupMap,
 		semanticUiReactCountries,
 		todoForYou,
