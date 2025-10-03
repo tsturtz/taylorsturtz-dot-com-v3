@@ -98,18 +98,33 @@
 
 	let mounted = false;
 	let isChatbotOpen = false;
-	let chatbotResponse = "🤖 Hi. I'm able to answer questions about Taylor's skills and experience. Ask away!"; 
-  	let isLoadingChatbotResponse = false;
+	let isChatbotInteractable = false;
+	let chatbotResponse = "🤖 I'm starting up. Just a moment.";
+	let isLoadingChatbotResponse = false;
 	let scrollPosition = 0;
 	// $: console.log('🚀 ~ scrollPosition', scrollPosition);
 
-	onMount(() => {
-		mounted = true;
-		setTimeout(() => {
+	const checkChatbotHealth = async () => {
+		isLoadingChatbotResponse = true;
+		try {
+			const response = await fetch(
+				'https://taylorsturtz.com/.netlify/functions/get-chatbot-health'
+			);
+			const data = await response.json();
+			console.log('Chatbot is online: ', data.response);
 			isChatbotOpen = true;
-		}, 1000);
-	});
-	
+			isChatbotInteractable = true;
+			chatbotResponse =
+				"🤖 Hi. I'm able to answer questions about Taylor's skills and experience. Ask away!";
+		} catch (error) {
+			console.error('Health check failed from chatbot API:', error);
+			chatbotResponse = "Apologies, I'm offline right now. 💤";
+			isChatbotInteractable = false;
+		} finally {
+			isLoadingChatbotResponse = false;
+		}
+	};
+
 	const handleToggleChatbot = () => {
 		isChatbotOpen = !isChatbotOpen;
 	};
@@ -118,12 +133,12 @@
 		event.preventDefault();
 		if (event.key === 'Enter') {
 			isLoadingChatbotResponse = true;
-            const input = document.querySelector('#chatbot-input textarea') as HTMLTextAreaElement;
+			const input = document.querySelector('#chatbot-input textarea') as HTMLTextAreaElement;
 			const prompt = input.value.trim();
 			input.value = '';
 			try {
 				const response = await fetch(
-					'https://taylorsturtz.com/.netlify/functions/post-chatbot',
+					'https://taylorsturtz.com/.netlify/functions/post-chatbot-prompt',
 					{
 						method: 'POST',
 						headers: {
@@ -135,13 +150,18 @@
 				const data = await response.json();
 				chatbotResponse = data.response;
 			} catch (error) {
-				console.error("Failed to fetch from chatbot API:", error);
-				chatbotResponse = "Sorry, something went wrong. Please try again.";
+				console.error('Failed to fetch from chatbot API:', error);
+				chatbotResponse = 'Sorry, something went wrong. Please try again.';
 			} finally {
-          		isLoadingChatbotResponse = false;
-      		}
-        }
+				isLoadingChatbotResponse = false;
+			}
+		}
 	};
+
+	onMount(() => {
+		mounted = true;
+		checkChatbotHealth();
+	});
 </script>
 
 <svelte:window bind:scrollY={scrollPosition} />
@@ -1075,7 +1095,7 @@
 					class="feather feather-chevron-down"
 					style="margin-right: -20px;"
 				>
-					<polyline points="6 9 12 15 18 9"></polyline>
+					<polyline points="6 9 12 15 18 9" />
 				</svg>
 			{:else}
 				<em>Let's chat!{' '}</em>
@@ -1093,7 +1113,7 @@
 					class="feather feather-chevron-up"
 					style="margin-right: -20px;"
 				>
-					<polyline points="18 15 12 9 6 15"></polyline>
+					<polyline points="18 15 12 9 6 15" />
 				</svg>
 			{/if}
 		</div>
@@ -1104,8 +1124,18 @@
 				<p>{chatbotResponse}</p>
 			{/if}
 		</div>
-		<div id="chatbot-input" on:keyup={handleSubmitQuestionToChatbot} style="display: {isChatbotOpen ? 'flex' : 'none'};">
-			<textarea autofocus rows="3" placeholder="Type a message..." maxlength="500" />
+		<div
+			id="chatbot-input"
+			on:keyup={handleSubmitQuestionToChatbot}
+			style="display: {isChatbotOpen ? 'flex' : 'none'};"
+		>
+			<textarea
+				autofocus
+				disabled={isChatbotInteractable}
+				rows="3"
+				placeholder="Type a message..."
+				maxlength="500"
+			/>
 		</div>
 	</div>
 </main>
@@ -1147,14 +1177,14 @@ background-size: 15px 15px; -->
 		border-bottom-right-radius: 0px;
 		transition: all 0.3s ease-in-out;
 		&.is-open {
-            height: 500px;
-            width: 400px;
-            right: 50px;
-            bottom: 20px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
+			height: 500px;
+			width: 400px;
+			right: 50px;
+			bottom: 20px;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
 			padding: 0 20px 20px;
-        }
+		}
 		#chatbot-btn {
 			padding-top: 10px;
 			display: flex;
@@ -1185,15 +1215,16 @@ background-size: 15px 15px; -->
 				transition: all 0.3s ease-in-out;
 			}
 		}
-		#chevron-up, #chevron-down {
+		#chevron-up,
+		#chevron-down {
 			transform: translateX(-50%);
 			opacity: 0.5;
 			animation: bounce 2s infinite;
 		}
 	}
 	// Styles for when the chatbot is open on small screens
-    @media (max-width: 640px) {
-        #chatbot {
+	@media (max-width: 640px) {
+		#chatbot {
 			left: 50%;
 			right: 50%;
 			transform: translate(-50%, 0);
@@ -1209,7 +1240,7 @@ background-size: 15px 15px; -->
 				padding: 0px 20px 20px;
 			}
 		}
-    }
+	}
 	.section-heading {
 		@include md {
 			font-size: 3rem;
