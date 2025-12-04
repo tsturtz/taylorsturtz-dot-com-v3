@@ -265,9 +265,15 @@
 						affinity for design and good vibes 🤙. Currently, I'm developing commerce system tools
 						and services at <a href="https://www.blizzard.com">Blizzard Entertainment</a>.
 					</p>
-					<iframe src="https://github.com/sponsors/tsturtz/button" title="Sponsor tsturtz" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
+					<br />
+					<iframe
+						src="https://github.com/sponsors/tsturtz/button"
+						title="Sponsor tsturtz"
+						height="32"
+						width="114"
+						style="border: 0; border-radius: 6px;"
+					/>
 					<div id="details-social">
-						<br />
 						<p>Check me out on social and run me in the terminal:</p>
 						<div id="intro-social">
 							<a href="/twitter">
