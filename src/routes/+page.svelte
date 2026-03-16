@@ -388,7 +388,9 @@
 				</p>
 				<p>
 					I'm also a big fan of my family, soccer, tea, board games, isometric art, hiking, and
-					plants.
+					plants. Lately I've been trying <a href="https://bobahunt.com/california/irvine"
+						>all the boba places in Irvine.</a
+					>
 				</p>
 				<!-- <h5 class="section-subheading">Early days</h5>
         <BootOnBall />

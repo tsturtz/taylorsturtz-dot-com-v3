@@ -3,6 +3,8 @@
 	import tsV1_img from '$lib/images/demos/taylor-sturtz-dot-com-v1.jpg';
 	import tsV2_img from '$lib/images/demos/taylor-sturtz-dot-com-v2.png';
 	import tsV3_img from '$lib/images/demos/jungle-bg-sm.jpg';
+	import bh_img from '$lib/images/demos/bh-home.png';
+	import bh_img_anim from '$lib/images/demos/bh-home.gif';
 	import realValue_img from '$lib/images/demos/realvalue.jpg';
 	import realValue_img_anim from '$lib/images/demos/realvalue.gif';
 	import meetupMap_img from '$lib/images/demos/meetupmap.jpg';
@@ -102,6 +104,15 @@
 		stack: ['jQuery'],
 		githubLink: 'https://github.com/tsturtz/taylorsturtz-dot-com-v1',
 		description: `The <strong>first</strong> iteration of my developer portfolio site. A vanilla site with jQuery for all the advantages it provided at the time.`
+	};
+	const bobaHunt: Project = {
+		type: ProjectType.WEB,
+		title: 'boba-hunt',
+		metaImage: bh_img,
+		metaImageAnimated: bh_img_anim,
+		stack: ['Next.js', 'Python', 'Tailwind', 'Firebase', 'Gemini'],
+		externalLink: 'https://bobahunt.com',
+		description: `A robust nationwide boba tea directory website. Data collection and site updates are controlled with an event-driven system involving a web of cloud functions, semaphore-controlled asyncronous processes, custom webhooks, and task queues.`
 	};
 	const realValue: Project = {
 		type: ProjectType.WEB,
@@ -225,6 +236,7 @@
 		taylorSturtzDotComV3,
 		taylorSturtzDotComV2,
 		taylorSturtzDotComV1,
+		bobaHunt,
 		zoombot,
 		youtTeamSoccerMatches,
 		iWantMyBbtv,
