@@ -81,17 +81,17 @@
 			<div style="display: flex; gap: 15px;">
 				<div class="links">
 					{#if externalLink}
-						<a href={externalLink} target="__blank" style="display: flex;">
+						<a href={externalLink} target="_blank" rel="noopener noreferrer" style="display: flex;">
 							<ExternalLinkIcon --size="20px" />
 						</a>
 					{/if}
 					{#if imagesLink}
-						<a href={imagesLink} target="__blank" style="display: flex;">
+						<a href={imagesLink} target="_blank" rel="noopener noreferrer" style="display: flex;">
 							<ImageIcon --size="20px" />
 						</a>
 					{/if}
 					{#if githubLink}
-						<a href={githubLink} target="__blank" style="display: flex;">
+						<a href={githubLink} target="_blank" rel="noopener noreferrer" style="display: flex;">
 							<GithubIcon --size="20px" />
 						</a>
 					{/if}

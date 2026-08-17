@@ -387,9 +387,8 @@
 					enjoy what I do, I make work fun, and I empower my teammates to be successful.
 				</p>
 				<p>
-					I'm also a big fan of my family, soccer, tea, board games, isometric art, hiking, and
-					plants. Lately I've been trying <a href="https://bobahunt.com/california/irvine"
-						>all the boba places in Irvine.</a
+					I'm also a big fan of my family, soccer, tea, board games, isometric art, hiking, and <a
+						href="https://nextrace.live/about">distance running.</a
 					>
 				</p>
 				<!-- <h5 class="section-subheading">Early days</h5>
@@ -431,7 +430,7 @@
 							<div class="accent-box">
 								<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
 									<h3 style="color: white;">Blizzard Entertainment</h3>
-									<a href="https://www.blizzard.com" target="__blank">
+									<a href="https://www.blizzard.com" target="_blank" rel="noopener noreferrer">
 										<ExternalLinkIcon --size="16px" />
 									</a>
 								</div>
@@ -486,7 +485,7 @@
 							<div class="accent-box">
 								<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
 									<h3 style="color: white;">Restaurant365</h3>
-									<a href="https://www.restaurant365.com" target="__blank">
+									<a href="https://www.restaurant365.com" target="_blank" rel="noopener noreferrer">
 										<ExternalLinkIcon --size="16px" />
 									</a>
 								</div>
@@ -534,7 +533,7 @@
 							<div class="accent-box">
 								<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
 									<h3 style="color: white;">Ytel</h3>
-									<a href="https://www.ytel.com" target="__blank">
+									<a href="https://www.ytel.com" target="_blank" rel="noopener noreferrer">
 										<ExternalLinkIcon --size="16px" />
 									</a>
 								</div>
@@ -603,7 +602,7 @@
 										</p>
 										<p>Ann Ackerman Realtor Website</p>
 									</div>
-									<a href="https://annackerman.com" target="__blank">
+									<a href="https://annackerman.com" target="_blank" rel="noopener noreferrer">
 										<ExternalLinkIcon --size="16px" />
 									</a>
 								</div>
@@ -615,7 +614,7 @@
 										<p>Love Formula Game Website /</p>
 										<p>Gwin Games Logo and Print Materials</p>
 									</div>
-									<a href="http://loveformulagame.com" target="__blank">
+									<a href="http://loveformulagame.com" target="_blank" rel="noopener noreferrer">
 										<ExternalLinkIcon --size="16px" />
 									</a>
 								</div>

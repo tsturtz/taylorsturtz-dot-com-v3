@@ -24,6 +24,8 @@
 	import semanticUiReactCountries_img from '$lib/images/demos/semantic-ui-react-countries.jpg';
 	import semanticUiReactCountries_img_anim from '$lib/images/demos/semantic-ui-react-countries.gif';
 	import homeDash_img from '$lib/images/demos/home-dash.jpg';
+	import nextRaceWeb_img from '$lib/images/demos/next-race-web.png';
+	import nextRaceMobile_img from '$lib/images/demos/next-race-app-screens.png';
 	// util
 	import Button from '../Button.svelte';
 	// app
@@ -231,11 +233,29 @@
 		stack: ['Web/APIs', 'Powershell'],
 		description: `Automated custom home display system. Displays family photos, news/stocks, weather, streams/feeds, and useful Google Sheets populated data. Scripts to run it all on windows/chrome (launch, interaction detection, etc.).`
 	};
+	const nextRaceWeb: Project = {
+		type: ProjectType.WEB,
+		title: 'next-race-web',
+		metaImage: nextRaceWeb_img,
+		stack: ['Next.js', 'Tailwind', 'Firebase'],
+		externalLink: 'https://nextrace.live',
+		description: `The web companion to my <strong><a href="https://nextrace.live" target="_blank" rel="noopener noreferrer">Next Race</a></strong> passion project. The website allows users to explore races on a beautifully designed map and is a funnel to the mobile app. It also hosts browsing features and a blog.`
+	};
+	const nextRaceMobile: Project = {
+		type: ProjectType.MOBILE,
+		title: 'next-race-mobile',
+		metaImage: nextRaceMobile_img,
+		stack: ['Expo', 'React Native', 'Swift', 'Kotlin'],
+		externalLink: 'https://nextrace.live/download',
+		description: `My <strong>passion project</strong>. Next Race is an app I built to track upcoming race details; it scratches an itch I've had ever since I got into running. It's cross-platform and provides race planning, weather info, and countdown widgets, all backed by my race directory that ingests races from across the country from 5+ race providers every night.`
+	};
 
 	const projects: Project[] = [
 		taylorSturtzDotComV3,
 		taylorSturtzDotComV2,
 		taylorSturtzDotComV1,
+		nextRaceWeb,
+		nextRaceMobile,
 		bobaHunt,
 		zoombot,
 		youtTeamSoccerMatches,
